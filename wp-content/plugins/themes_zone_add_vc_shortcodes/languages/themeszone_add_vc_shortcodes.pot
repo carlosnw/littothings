@@ -1,0 +1,865 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Themes Zone Add Visual Composer Custom Elements\n"
+"POT-Creation-Date: 2017-08-28 16:26+0200\n"
+"PO-Revision-Date: 2017-08-28 16:26+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: shortcodes/banner.php:19
+msgid "Brideliness Banner"
+msgstr ""
+
+#: shortcodes/banner.php:21
+msgid "Creates unique banner with hover effect"
+msgstr ""
+
+#: shortcodes/banner.php:22 shortcodes/carousel.php:11
+#: shortcodes/contact-member.php:11 shortcodes/recent-post.php:12
+#: shortcodes/sale-carousel.php:11 shortcodes/special-header.php:12
+#: shortcodes/testimonials.php:13 shortcodes/woo-codes.php:11
+msgid "Brideliness"
+msgstr ""
+
+#: shortcodes/banner.php:27
+msgid "Banner Image"
+msgstr ""
+
+#: shortcodes/banner.php:29
+msgid "Select image from media library."
+msgstr ""
+
+#: shortcodes/banner.php:33 shortcodes/carousel.php:54
+#: shortcodes/contact-member.php:23 shortcodes/testimonials.php:81
+msgid "Image size"
+msgstr ""
+
+#: shortcodes/banner.php:42 shortcodes/banner.php:138
+#: shortcodes/carousel.php:63 shortcodes/contact-member.php:32
+#: shortcodes/testimonials.php:90
+msgid ""
+"Enter image size. You can change these images' dimensions in wordpress media "
+"settings."
+msgstr ""
+
+#: shortcodes/banner.php:47
+msgid "Banner main caption"
+msgstr ""
+
+#: shortcodes/banner.php:53
+msgid "Specify left offset for banner main caption (in %)"
+msgstr ""
+
+#: shortcodes/banner.php:61
+msgid "Specify top offset for banner main caption (in %)"
+msgstr ""
+
+#: shortcodes/banner.php:69
+msgid "Check for Animate Main Caption"
+msgstr ""
+
+#: shortcodes/banner.php:71 shortcodes/banner.php:101
+#: shortcodes/banner.php:144 shortcodes/special-header.php:45
+#: shortcodes/woo-codes.php:83 shortcodes/woo-codes.php:97
+#: shortcodes/woo-codes.php:106 shortcodes/woo-codes.php:115
+msgid "Yes"
+msgstr ""
+
+#: shortcodes/banner.php:77
+msgid "Banner secondary caption"
+msgstr ""
+
+#: shortcodes/banner.php:83
+msgid "Specify left offset for banner secondary caption (in %)"
+msgstr ""
+
+#: shortcodes/banner.php:91
+msgid "Specify top offset for banner secondary caption (in %)"
+msgstr ""
+
+#: shortcodes/banner.php:99
+msgid "Check for Animate Secondary Caption"
+msgstr ""
+
+#: shortcodes/banner.php:106 shortcodes/banner.php:150
+msgid "Choose hover effect for Banner"
+msgstr ""
+
+#: shortcodes/banner.php:135
+msgid "Add link to banner"
+msgstr ""
+
+#: shortcodes/banner.php:142
+msgid "Check for Delete Button"
+msgstr ""
+
+#: shortcodes/banner.php:145 shortcodes/special-header.php:46
+msgid "Use font family from the theme."
+msgstr ""
+
+#: shortcodes/banner.php:168
+msgid "Specify top offset for button banner (in %)"
+msgstr ""
+
+#: shortcodes/banner.php:176
+msgid "Specify left offset for button banner (in %)"
+msgstr ""
+
+#: shortcodes/banner.php:184 shortcodes/carousel.php:186
+#: shortcodes/contact-member.php:105 shortcodes/recent-post.php:119
+#: shortcodes/sale-carousel.php:94 shortcodes/special-header.php:65
+#: shortcodes/testimonials.php:140 shortcodes/woo-codes.php:122
+msgid "Extra class name"
+msgstr ""
+
+#: shortcodes/banner.php:186 shortcodes/carousel.php:188
+#: shortcodes/contact-member.php:107 shortcodes/recent-post.php:121
+#: shortcodes/sale-carousel.php:96 shortcodes/special-header.php:67
+#: shortcodes/testimonials.php:142 shortcodes/woo-codes.php:124
+msgid ""
+"Style particular content element differently - add a class name and refer to "
+"it in custom CSS."
+msgstr ""
+
+#: shortcodes/banner.php:190 shortcodes/carousel.php:192
+#: shortcodes/contact-member.php:111 shortcodes/recent-post.php:125
+#: shortcodes/sale-carousel.php:100 shortcodes/special-header.php:71
+#: shortcodes/testimonials.php:146 shortcodes/woo-codes.php:128
+msgid "CSS box"
+msgstr ""
+
+#: shortcodes/banner.php:192 shortcodes/carousel.php:194
+#: shortcodes/contact-member.php:113 shortcodes/recent-post.php:127
+#: shortcodes/sale-carousel.php:102 shortcodes/special-header.php:73
+#: shortcodes/testimonials.php:148 shortcodes/woo-codes.php:130
+msgid "Design Options"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:5
+msgctxt "Post Type General Name"
+msgid "Lookbook"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:6
+msgctxt "Post Type Singular Name"
+msgid "Lookbook"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:7 shortcodes/brideliness-lookbook.php:9
+msgid "Lookbook"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:8
+msgid "Parent Lookbook"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:10
+msgid "View Lookbook Post"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:11
+msgid "Add New Lookbook Post"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:12
+msgid "Add New"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:13
+msgid "Edit Lookbook Post"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:14
+msgid "Update Lookbook Post"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:15
+msgid "Search Lookbook Post"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:16
+msgid "Not Found"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:17
+msgid "Not found in Trash"
+msgstr ""
+
+#: shortcodes/brideliness-lookbook.php:21
+msgid "lookbook"
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:14
+msgid "Brideliness Shop Filters"
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:15
+msgid ""
+"Brideliness special widget. Woocommerce shop filters based on attributes of "
+"your products."
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:29
+msgid "Title: "
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:33
+msgid "Pre-Content"
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:37
+msgid "Attribute:"
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:49
+msgid "Show products count?"
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:53
+msgid "Show as dropdown?"
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:57
+msgid "Show as Gride?"
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:106
+msgid "No attributes specified"
+msgstr ""
+
+#: shortcodes/brideliness-widget-shop-filters.php:121
+msgid "Shop by "
+msgstr ""
+
+#: shortcodes/carousel.php:9
+msgid "Configurable Carousel"
+msgstr ""
+
+#: shortcodes/carousel.php:12
+msgid "Carousel with awesome options"
+msgstr ""
+
+#: shortcodes/carousel.php:17
+msgid "Title text"
+msgstr ""
+
+#: shortcodes/carousel.php:19
+msgid "Title goes here"
+msgstr ""
+
+#: shortcodes/carousel.php:23
+msgid "Use as banners rotator?"
+msgstr ""
+
+#: shortcodes/carousel.php:29
+msgid "Carousel Images"
+msgstr ""
+
+#: shortcodes/carousel.php:33 shortcodes/contact-member.php:64
+msgid "Facebook"
+msgstr ""
+
+#: shortcodes/carousel.php:37 shortcodes/contact-member.php:69
+msgid "Twitter"
+msgstr ""
+
+#: shortcodes/carousel.php:41 shortcodes/contact-member.php:74
+msgid "Google Plus"
+msgstr ""
+
+#: shortcodes/carousel.php:48
+msgid "Image"
+msgstr ""
+
+#: shortcodes/carousel.php:50
+msgid "Add image from Media library"
+msgstr ""
+
+#: shortcodes/carousel.php:67 shortcodes/contact-member.php:82
+#: shortcodes/woo-codes.php:58
+msgid "Title"
+msgstr ""
+
+#: shortcodes/carousel.php:69
+msgid "Enter heading text for item"
+msgstr ""
+
+#: shortcodes/carousel.php:74
+msgid "Short Description"
+msgstr ""
+
+#: shortcodes/carousel.php:76
+msgid "Enter description text for item"
+msgstr ""
+
+#: shortcodes/carousel.php:80
+msgid "URL for detailed view"
+msgstr ""
+
+#: shortcodes/carousel.php:82
+msgid "Url of a link for detailed view button"
+msgstr ""
+
+#: shortcodes/carousel.php:87
+msgid "Button Text (shown with banner rotator)"
+msgstr ""
+
+#: shortcodes/carousel.php:89
+msgid "Enter text for button"
+msgstr ""
+
+#: shortcodes/carousel.php:99
+msgid "Items per Slide"
+msgstr ""
+
+#: shortcodes/carousel.php:102
+msgid "1 item in row"
+msgstr ""
+
+#: shortcodes/carousel.php:103
+msgid "2 items in row"
+msgstr ""
+
+#: shortcodes/carousel.php:104
+msgid "3 items in row"
+msgstr ""
+
+#: shortcodes/carousel.php:105
+msgid "6 items in 2 rows"
+msgstr ""
+
+#: shortcodes/carousel.php:106
+msgid "n items in row"
+msgstr ""
+
+#: shortcodes/carousel.php:117
+msgid "How many slides to show in one moment"
+msgstr ""
+
+#: shortcodes/carousel.php:120
+msgid "2 Slides"
+msgstr ""
+
+#: shortcodes/carousel.php:121
+msgid "3 Slides"
+msgstr ""
+
+#: shortcodes/carousel.php:122
+msgid "4 Slides"
+msgstr ""
+
+#: shortcodes/carousel.php:123
+msgid "5 Slides"
+msgstr ""
+
+#: shortcodes/carousel.php:124
+msgid "6 Slides"
+msgstr ""
+
+#: shortcodes/carousel.php:135
+msgid "Animation on hover"
+msgstr ""
+
+#: shortcodes/carousel.php:138
+msgid "Full height shift"
+msgstr ""
+
+#: shortcodes/carousel.php:139
+msgid "Full height fading"
+msgstr ""
+
+#: shortcodes/carousel.php:140
+msgid "Sliding from bottom"
+msgstr ""
+
+#: shortcodes/carousel.php:141
+msgid "No animation"
+msgstr ""
+
+#: shortcodes/carousel.php:152 shortcodes/sale-carousel.php:17
+#: shortcodes/testimonials.php:18
+msgid "Transition Type"
+msgstr ""
+
+#: shortcodes/carousel.php:168 shortcodes/sale-carousel.php:29
+#: shortcodes/testimonials.php:30
+msgid "Autoplay"
+msgstr ""
+
+#: shortcodes/carousel.php:170 shortcodes/sale-carousel.php:31
+#: shortcodes/testimonials.php:32
+msgid "Whether to running your carousel automatically or not"
+msgstr ""
+
+#: shortcodes/carousel.php:174 shortcodes/recent-post.php:107
+#: shortcodes/sale-carousel.php:35 shortcodes/testimonials.php:36
+msgid "Show Arrows"
+msgstr ""
+
+#: shortcodes/carousel.php:176 shortcodes/sale-carousel.php:37
+#: shortcodes/testimonials.php:38
+msgid "Show/hide arrow buttons"
+msgstr ""
+
+#: shortcodes/carousel.php:180 shortcodes/sale-carousel.php:41
+#: shortcodes/testimonials.php:42
+msgid "Show Page Navigation"
+msgstr ""
+
+#: shortcodes/carousel.php:182 shortcodes/sale-carousel.php:43
+#: shortcodes/testimonials.php:44
+msgid "Show/hide navigation buttons under your carousel"
+msgstr ""
+
+#: shortcodes/carousel.php:253 shortcodes/carousel.php:259
+msgid "Learn More"
+msgstr ""
+
+#: shortcodes/contact-member.php:9
+msgid "Member Info and Contacts"
+msgstr ""
+
+#: shortcodes/contact-member.php:12
+msgid "Output Member Info and Contacts"
+msgstr ""
+
+#: shortcodes/contact-member.php:17
+msgid "Member Image"
+msgstr ""
+
+#: shortcodes/contact-member.php:19
+msgid "Add Member Image"
+msgstr ""
+
+#: shortcodes/contact-member.php:36 shortcodes/contact-member.php:38
+msgid "Team Member Name"
+msgstr ""
+
+#: shortcodes/contact-member.php:42 shortcodes/contact-member.php:44
+msgid "Team Member Occupation"
+msgstr ""
+
+#: shortcodes/contact-member.php:48
+msgid "Team Member Short Biography"
+msgstr ""
+
+#: shortcodes/contact-member.php:50
+msgid "Short biography here"
+msgstr ""
+
+#: shortcodes/contact-member.php:54
+msgid "Enable hover effect"
+msgstr ""
+
+#: shortcodes/contact-member.php:56
+msgid "Check \"enable\" to add hover effect for the element"
+msgstr ""
+
+#: shortcodes/contact-member.php:60 shortcodes/recent-post.php:87
+msgid "Buttons"
+msgstr ""
+
+#: shortcodes/contact-member.php:84
+msgid "Enter Title"
+msgstr ""
+
+#: shortcodes/contact-member.php:89
+msgid "URL"
+msgstr ""
+
+#: shortcodes/contact-member.php:91
+msgid "Enter URL for button"
+msgstr ""
+
+#: shortcodes/contact-member.php:96
+msgid "Icon for button"
+msgstr ""
+
+#: shortcodes/contact-member.php:98
+msgid "Enter Icon for button"
+msgstr ""
+
+#: shortcodes/recent-post.php:10
+msgid "Carousel Recent Post"
+msgstr ""
+
+#: shortcodes/recent-post.php:13
+msgid "Output  Recent Post"
+msgstr ""
+
+#: shortcodes/recent-post.php:18 shortcodes/woo-codes.php:30
+msgid "Element Title"
+msgstr ""
+
+#: shortcodes/recent-post.php:23
+msgid "Posts per row"
+msgstr ""
+
+#: shortcodes/recent-post.php:33
+msgid "Total number of Posts to show"
+msgstr ""
+
+#: shortcodes/recent-post.php:39
+msgid "Orderby Parameter"
+msgstr ""
+
+#: shortcodes/recent-post.php:42 shortcodes/woo-codes.php:57
+msgid "Date"
+msgstr ""
+
+#: shortcodes/recent-post.php:43 shortcodes/woo-codes.php:61
+msgid "Random"
+msgstr ""
+
+#: shortcodes/recent-post.php:44
+msgid "Author"
+msgstr ""
+
+#: shortcodes/recent-post.php:45
+msgid "Comments Quantity"
+msgstr ""
+
+#: shortcodes/recent-post.php:51 shortcodes/woo-codes.php:43
+msgid "Order Parameter"
+msgstr ""
+
+#: shortcodes/recent-post.php:54 shortcodes/woo-codes.php:46
+msgid "Ascending"
+msgstr ""
+
+#: shortcodes/recent-post.php:55 shortcodes/woo-codes.php:47
+msgid "Descending"
+msgstr ""
+
+#: shortcodes/recent-post.php:61
+msgid "Posts by Category slug"
+msgstr ""
+
+#: shortcodes/recent-post.php:66
+msgid "Featured Image"
+msgstr ""
+
+#: shortcodes/recent-post.php:73
+msgid "Title with Meta Data"
+msgstr ""
+
+#: shortcodes/recent-post.php:80
+msgid "Post Excerpt"
+msgstr ""
+
+#: shortcodes/recent-post.php:94
+msgid "With border and without padding"
+msgstr ""
+
+#: shortcodes/recent-post.php:101
+msgid "Use autoplay"
+msgstr ""
+
+#: shortcodes/recent-post.php:113
+msgid "Show Navigation"
+msgstr ""
+
+#: shortcodes/recent-post.php:203 shortcodes/recent-post.php:224
+msgid "Click to read more"
+msgstr ""
+
+#: shortcodes/recent-post.php:209
+msgid "by"
+msgstr ""
+
+#: shortcodes/recent-post.php:209
+msgid "in"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:9
+msgid "Sale Carousel"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:12
+msgid "Output  Sale Product width Carousel"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:49 shortcodes/testimonials.php:56
+msgid "Testimonials Items"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:54 shortcodes/testimonials.php:61
+#: shortcodes/testimonials.php:67 shortcodes/testimonials.php:94
+#: shortcodes/woo-codes.php:59
+msgid "Name"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:55 shortcodes/testimonials.php:62
+#: shortcodes/testimonials.php:68 shortcodes/testimonials.php:108
+msgid "Occupation"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:56 shortcodes/testimonials.php:63
+#: shortcodes/testimonials.php:69
+msgid "Text"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:63
+msgid "Enter Sale Product ID"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:65
+msgid "Add Product ID for Item"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:70
+msgid "Target Date"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:72
+msgid "Set target date (YYYY-MM-DD) when special offer ends"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:77
+msgid "Pre-Countdown text"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:79
+msgid "Pre-Countdown Text"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:84
+msgid "Show Product Image"
+msgstr ""
+
+#: shortcodes/sale-carousel.php:86
+msgid "Check to Show Product Image"
+msgstr ""
+
+#: shortcodes/special-header.php:9
+msgid "Brideliness Heading"
+msgstr ""
+
+#: shortcodes/special-header.php:11
+msgid "Heading with Google fonts"
+msgstr ""
+
+#: shortcodes/special-header.php:17
+msgid "Heading Text"
+msgstr ""
+
+#: shortcodes/special-header.php:20
+msgid "Enter Heading Text"
+msgstr ""
+
+#: shortcodes/special-header.php:33
+msgid "Select element tag."
+msgstr ""
+
+#: shortcodes/special-header.php:34
+msgid "Select text alignment."
+msgstr ""
+
+#: shortcodes/special-header.php:35
+msgid "Enter font size."
+msgstr ""
+
+#: shortcodes/special-header.php:36
+msgid "Enter line height."
+msgstr ""
+
+#: shortcodes/special-header.php:37
+msgid "Select heading color."
+msgstr ""
+
+#: shortcodes/special-header.php:43
+msgid "Use theme default font family?"
+msgstr ""
+
+#: shortcodes/special-header.php:54
+msgid "Select font family."
+msgstr ""
+
+#: shortcodes/special-header.php:55
+msgid "Select font styling."
+msgstr ""
+
+#: shortcodes/testimonials.php:10
+msgid "Testimonials"
+msgstr ""
+
+#: shortcodes/testimonials.php:12
+msgid "Output Testimonials With Owl Carousel"
+msgstr ""
+
+#: shortcodes/testimonials.php:48
+msgid "Testimonials  Style#1"
+msgstr ""
+
+#: shortcodes/testimonials.php:50
+msgid "Check for Testimonials Style#1"
+msgstr ""
+
+#: shortcodes/testimonials.php:75
+msgid " Image"
+msgstr ""
+
+#: shortcodes/testimonials.php:77
+msgid "Add Image"
+msgstr ""
+
+#: shortcodes/testimonials.php:96
+msgid "Enter Name"
+msgstr ""
+
+#: shortcodes/testimonials.php:101
+msgid "Name Color"
+msgstr ""
+
+#: shortcodes/testimonials.php:103 shortcodes/testimonials.php:117
+msgid "Select Occupation Color"
+msgstr ""
+
+#: shortcodes/testimonials.php:110
+msgid "Enter Occupation"
+msgstr ""
+
+#: shortcodes/testimonials.php:115
+msgid "Occupation Color"
+msgstr ""
+
+#: shortcodes/testimonials.php:122
+msgid "Content Text"
+msgstr ""
+
+#: shortcodes/testimonials.php:124
+msgid "Set content of element"
+msgstr ""
+
+#: shortcodes/testimonials.php:129
+msgid "Content Text color"
+msgstr ""
+
+#: shortcodes/testimonials.php:131
+msgid "Select Content Text"
+msgstr ""
+
+#: shortcodes/woo-codes.php:9 shortcodes/woo-codes.php:16
+msgid "Woocommerce Shortcode"
+msgstr ""
+
+#: shortcodes/woo-codes.php:19
+msgid "Recent Products"
+msgstr ""
+
+#: shortcodes/woo-codes.php:20
+msgid "Featured Products"
+msgstr ""
+
+#: shortcodes/woo-codes.php:21
+msgid "Sale Products"
+msgstr ""
+
+#: shortcodes/woo-codes.php:22
+msgid "Best Selling Products"
+msgstr ""
+
+#: shortcodes/woo-codes.php:23
+msgid "Top Rated Products"
+msgstr ""
+
+#: shortcodes/woo-codes.php:24
+msgid "Product Categories"
+msgstr ""
+
+#: shortcodes/woo-codes.php:26
+msgid "Select Woocommerce Shortcode"
+msgstr ""
+
+#: shortcodes/woo-codes.php:32
+msgid "Enter Element Title"
+msgstr ""
+
+#: shortcodes/woo-codes.php:36
+msgid "Number of Products/Categories to show"
+msgstr ""
+
+#: shortcodes/woo-codes.php:38 shortcodes/woo-codes.php:50
+#: shortcodes/woo-codes.php:63
+msgid "Set the number of items to show"
+msgstr ""
+
+#: shortcodes/woo-codes.php:54
+msgid "Order Parameter by"
+msgstr ""
+
+#: shortcodes/woo-codes.php:60
+msgid "ID"
+msgstr ""
+
+#: shortcodes/woo-codes.php:67
+msgid "Columns quantity"
+msgstr ""
+
+#: shortcodes/woo-codes.php:70
+msgid "2 Cols"
+msgstr ""
+
+#: shortcodes/woo-codes.php:71
+msgid "3 Cols"
+msgstr ""
+
+#: shortcodes/woo-codes.php:72
+msgid "4 Cols"
+msgstr ""
+
+#: shortcodes/woo-codes.php:73
+msgid "5 Cols"
+msgstr ""
+
+#: shortcodes/woo-codes.php:74
+msgid "6 Cols"
+msgstr ""
+
+#: shortcodes/woo-codes.php:77
+msgid "Set Columns quantity"
+msgstr ""
+
+#: shortcodes/woo-codes.php:81
+msgid "Use Owl Carousel"
+msgstr ""
+
+#: shortcodes/woo-codes.php:89
+msgid "Use AutoPlay Carousel"
+msgstr ""
+
+#: shortcodes/woo-codes.php:95
+msgid "Use Owl Carousel Navigation"
+msgstr ""
+
+#: shortcodes/woo-codes.php:99
+msgid "Display Top Navigation"
+msgstr ""
+
+#: shortcodes/woo-codes.php:104
+msgid "Use Owl Carousel Pagination"
+msgstr ""
+
+#: shortcodes/woo-codes.php:108
+msgid "Display Carousel Pagination"
+msgstr ""
+
+#: shortcodes/woo-codes.php:113
+msgid "Use Owl Carousel Pagination \"Next\", \"Prev\""
+msgstr ""
+
+#: shortcodes/woo-codes.php:117
+msgid "Display Carousel Pagination \"Next\", \"Prev\""
+msgstr ""

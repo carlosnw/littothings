@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'brideliness';
+  src:  url('../fonts/brideliness/brideliness.eot?psowy9');
+  src:  url('../fonts/brideliness/brideliness.eot?psowy9#iefix') format('embedded-opentype'),
+    url('../fonts/brideliness/brideliness.ttf?psowy9') format('truetype'),
+    url('../fonts/brideliness/brideliness.woff?psowy9') format('woff'),
+    url('../fonts/brideliness/brideliness.svg?psowy9#brideliness') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'brideliness' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-simple-ruler:before {
+	font-family: 'brideliness';
+	content: "\e914";
+}
+.icon-shopping_bag:before {
+	font-family: 'brideliness';
+	content: "\e913";
+}
+.icon-cart:before {
+	font-family: 'brideliness';
+	content: "\e900";
+}
+.icon-zoom-in:before {
+	content: "\e912";
+	font-family: 'brideliness';
+}
+.icon-right:before {
+	font-family: 'brideliness';
+    content: "\e901";
+}
+.icon-left:before {
+	font-family: 'brideliness';
+    content: "\e902";
+}
+.icon-search:before {
+	font-family: 'brideliness';
+    content: "\e903";
+}
+.icon-tool-simpleicon:before {
+	font-family: 'brideliness';
+    content: "\e904";
+}
+.icon-assignment-return:before {
+	font-family: 'brideliness';
+    content: "\e905";
+}
+.icon-checkbox-mark_1:before {
+	font-family: 'brideliness';
+    content: "\e906";
+}
+.icon-unchecked-checkbox:before {
+	font-family: 'brideliness';
+    content: "\e907";
+}
+.icon-checked-mark:before {
+	font-family: 'brideliness';
+    content: "\e908";
+}
+.icon-coffee-cup-icon:before {
+	font-family: 'brideliness';
+    content: "\e909";
+}
+.icon-diamond-icon:before {
+	font-family: 'brideliness';
+    content: "\e90a";
+}
+.icon-shapes:before {
+  	font-family: 'brideliness';
+	content: "\e90b";
+}
+.icon-star-outline:before {
+	font-family: 'brideliness';
+	content: "\e90c";
+}
+.icon-user-avatar:before {
+	font-family: 'brideliness';
+	content: "\e90d";
+}
+.icon-miscellaneous:before {
+	font-family: 'brideliness';
+	content: "\e90e";
+}
+.icon-SibCode:before {
+	font-family: 'brideliness';
+    content: "\e90f";
+}
+.icon-delivery-truck:before {
+	font-family: 'brideliness';
+    content: "\e910";
+}
+.icon-speech-bubble:before {
+	font-family: 'brideliness';
+    content: "\e911";
+}
