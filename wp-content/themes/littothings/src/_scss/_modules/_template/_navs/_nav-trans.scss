@@ -1,0 +1,38 @@
+// Module - Nav trans
+// --------------------------------------------------
+
+.nav-trans {
+
+  background-color: $nav-trans-bg;
+
+  @include nav-colour-options(
+    $nav-trans-bg,
+    $nav-trans-text,
+    $nav-trans-link,
+    $nav-trans-link-hover,
+    $nav-trans-link-hover-bg
+  );
+
+  &.nav-borders {
+    .nav-item {
+      border-color: $nav-trans-borders;
+    }
+  }
+
+  .nav-item-sub-wrap {
+    background: transparent;
+  }
+}
+
+.nav-off-canvas-trans {
+  @include nav-off-canvas-colour-options(
+    $nav-trans-bg,
+    $nav-trans-text,
+    $nav-trans-link,
+    $nav-trans-link-hover,
+    $nav-trans-link-hover-bg,
+    $nav-trans-offcanvas-bg
+  );
+
+  box-shadow: none;
+}

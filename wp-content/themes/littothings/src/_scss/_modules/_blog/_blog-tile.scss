@@ -1,0 +1,75 @@
+// Blog tile module
+
+.blog-tile {
+  @extend %clearfix;
+  border: solid 1px $border-colour-regular;
+  padding: $global-spacing;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-tile--list {
+
+  color: $text-colour-body-dark;
+  margin-bottom: $global-spacing;
+}
+
+.blog-tile--grid {
+}
+
+.blog-tile--grid-bg-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+
+  transition: background-color 0.6s;
+}
+
+.blog-tile--grid-bg {
+
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  // Only change color of text when we have image
+  .blog-tile--grid-content {
+
+    transform: translateY(100%);
+    opacity: 0;
+    position: relative;
+    z-index: 10;
+    color: #fff;
+
+    transition: transform 0.5s, opacity 0.3s;
+  }
+
+  &:hover, #{$touch} & {
+
+    .blog-tile--grid-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .blog-tile--grid-bg-overlay {
+      background-color: rgba(0,0,0,0.7);
+    }
+  }
+}
+
+.blog-tile-title {
+  margin: 0;
+}
+
+.blog-tile-img {
+  @media (max-width: $screen-md) {
+    margin-bottom: 1em;
+  }
+}

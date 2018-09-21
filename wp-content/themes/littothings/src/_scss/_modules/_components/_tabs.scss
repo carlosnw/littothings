@@ -1,0 +1,324 @@
+// Module - Tabs
+// --------------------------------------------------
+
+.tabs-sidebar-nav {
+  @media only screen and (max-width: $screen-max-md) {
+    margin-bottom: $global-spacing*2;
+  }
+}
+
+.tabs-sidebar-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: $global-spacing;
+
+  @media only screen and (max-width: $screen-max-md) {
+    top: 35%;
+    transform: rotate(90deg);
+
+    &--no-rotate {
+      transform: rotate(0deg);
+    }
+  }
+
+  &--left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: $global-spacing;
+  }
+
+}
+
+.tabs-search-wrap {
+  position: relative;
+}
+
+.tabs-search {
+
+  padding: $global-spacing;
+  height: auto;
+  border: 0;
+
+}
+
+.tabs-sidebar-nav-item {
+
+  position: relative;
+  padding: $global-spacing;
+  border-bottom: solid $border-thin $border-colour-regular;
+  font-weight: $weight-bold;
+
+  cursor: pointer;
+
+  transition: all 0.2s linear;
+
+  &:last-of-type {
+      border-bottom: 0;
+  }
+
+  &#{$tab-active} {
+    @include text-shadow-dark;
+    @include gradient-linear($core-brand-colour-dark, $core-brand-colour-extra-dark);
+
+    background-color: $core-brand-colour-extra-dark;
+    background-size: 1px 200%;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+    color: #ffffff;
+
+    .tabs-sidebar-icon {
+      fill: #ffffff;
+    }
+  }
+}
+
+.tabs-sidebar-nav-icon-doctor {
+  width: 3em;
+  height: 3em;
+
+  &--left {
+    float: left;
+  }
+
+  &--right {
+    float: right;
+    height: 2em;
+  }
+}
+
+// Tabs Box
+// --------------------------------------------------
+
+.tab-container {
+  @extend %clearfix;
+  background-color: darken($bg-colour-mid, 3%);
+}
+
+// Tab Nav
+.tab-nav {
+  @extend %clearfix;
+  background-color: #fff;
+}
+.tab-nav-list {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+  text-align: justify;
+}
+
+.tab-nav-list-item {
+  width: 20%;
+  float: left;
+  text-align: center;
+
+  border-right: solid 1px #fff;
+
+  &:last-of-type {
+    border-right: 0;
+  }
+
+  @media only screen and (max-width: $screen-max-md) {
+    width: 50%;
+  }
+
+  @media only screen and (max-width: $screen-max-xs) {
+    width: 100%;
+  }
+}
+
+// Tab sections
+.tab-section {
+  @extend %clearfix;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+
+  &#{$tab-active} {
+    opacity: 1;
+    height: auto;
+    padding: 2em 1em;
+  }
+
+  &--twitter {
+    opacity: 1;
+    height: auto;
+    padding: 2em 1em;
+  }
+}
+
+.tab-item-wrap {
+
+  height: 100%;
+  position: relative;
+  padding: 1.5em 1em;
+  border: 1px solid $border-colour-regular;
+  box-shadow: 0 0 1px 0 rgba(0,0,0,.2);
+  overflow: hidden;
+  z-index: 2;
+  background: #ffffff;
+}
+
+.tab-item {
+
+  opacity: 0;
+  transform: translate3d(0,-1em,0);
+  transition:
+          opacity 0.3s linear,
+          transform 0.3s linear;
+
+  #{$tab-active} & {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: $screen-max-md) {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+  }
+
+  &--twitter {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    border:0;
+  }
+}
+
+.tab-item-title {
+  @include type-scale-h4;
+}
+
+.tab-item-content {
+  @extend %clearfix;
+  margin: 1em 0;
+}
+
+.tab-item-link {
+  font-weight: bold;
+  position: relative;
+  display: block;
+
+  #{$no-touch} &:hover {
+
+    .icon-tab-item-link {
+      margin-left: 1.2em;
+    }
+
+  }
+}
+
+.icon-tab-item-link {
+
+  $size: 1em;
+
+  height: $size;
+  width: $size;
+
+  position: absolute;
+  top: 50%;
+  margin-top: -$size/2;
+
+  margin-left: $size;
+
+  fill: $core-brand-colour;
+
+  transition: margin-left 0.1s linear;
+
+}
+
+// Twitter details
+
+.tab-user-details-wrap {
+  @extend %clearfix;
+
+  position: relative;
+  z-index: 2;
+  padding-bottom: 1.3em;
+}
+
+.tab-user-name {
+  @include type-scale-h3;
+  margin-bottom: 0;
+}
+
+.tab-user-img {
+
+  width: 25%;
+  float: left;
+
+}
+
+.tab-user-details {
+
+  @extend %clearfix;
+  font-size: 0.9em;
+}
+
+.tabs-twitter-title {
+  position: relative;
+  display: inline-block;
+  color: $twitter-colour;
+}
+
+.tabs-twitter-title-icon {
+  height: 1em;
+  width: 1em;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  left: -1.5em;
+  fill: $twitter-colour;
+}
+
+.twitter-link {
+  color: $twitter-colour;
+
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: darken($twitter-colour, 10%);
+  }
+}
+
+.twitter-timestamp {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.twitter-timestamp-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+
+  fill: $core-brand-colour;
+}
+
+.icon-twitter-tab {
+
+  $size: 15em;
+  width: $size;
+  height:$size;
+
+  position: absolute;
+  z-index: 1;
+
+  top: 50%;
+  left: 50%;
+
+  margin-top: -$size/2;
+  margin-left: -$size/2;
+
+
+  fill: rgba(220,220,220, 0.2);
+
+}
+

@@ -1,0 +1,109 @@
+// Module - Product item
+// --------------------------------------------------
+
+// Main product item
+.product-item {
+  .product-item-inner {
+    height: 100%;
+    border: 1px solid $border-colour-regular;
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  .onsale {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: $core-brand-colour;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 50%;
+  }
+}
+
+.product-item-image-wrap {
+  position: relative;
+  flex-grow: 1;
+}
+
+.product-item-image {
+  position: relative;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.product-item-image--shadow {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+
+.product-item-body {
+  padding: $global-spacing/2;
+}
+
+.product-item-title {
+  @include type-scale-h4;
+}
+
+.product-item-desc {
+  @include type-scale-base;
+  color: $text-colour-body-light;
+}
+
+// Product review tile
+.product-item--review {
+
+  position: relative;
+  overflow: hidden;
+  background: $bg-colour-light-mid;
+  text-align: left;
+
+  @media only screen and (max-width: $screen-max-sm) {
+    margin-bottom: $grid-gutter-width;
+  }
+}
+
+.product-item-button-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.product-award-icon {
+
+  opacity: 0.03;
+  height: 25em;
+  width: 25em;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+
+  @media only screen and (max-width: $screen-max-sm) {
+    height: 10em;
+    width: 10em;
+  }
+}
+
+
+// Smaller product item
+.product-item-small {
+  text-align: center;
+}
+
+.product-item-small-image {
+  border: solid 1px $border-colour-regular;
+  padding: 1em;
+}
+
+.product-item-small-title {
+  @include type-scale-base;
+  font-weight: bold;
+}

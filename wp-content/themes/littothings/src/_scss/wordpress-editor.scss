@@ -1,0 +1,52 @@
+// Wordpress Editor
+//
+// Copyright 2018 LittoThings.
+// Type only styles for the wordpress editor
+// --------------------------------------------------
+
+// Tools
+// --------------------------------------------------
+@import '_tools/_layers';
+@import '_tools/_functions';
+
+// Variables
+// --------------------------------------------------
+@import '_variables/_base';
+@import '_variables/_state';
+
+// Common styles between files
+// --------------------------------------------------
+@import '_tools/_helpers';
+@import '_tools/_common';
+
+// Base
+// --------------------------------------------------
+@import '_base/_normalize';
+@import '_base/_type';
+
+// Additional editor styles
+// --------------------------------------------------
+#tinymce {
+
+  // Give the editor window some breathing room
+  margin: pem(30);
+  max-width: 802px;
+
+  @include editor-content-typography;
+  @include editor-content-elements;
+
+  // WP - Overwrite
+  // --------------------------------------------------
+  .wp-caption-dd {
+    @include type-scale-base--small;
+
+    line-height: $line-height-body;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: .5em;
+  }
+}

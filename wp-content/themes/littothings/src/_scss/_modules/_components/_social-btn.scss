@@ -1,0 +1,24 @@
+// Module - Social Btn
+// --------------------------------------------------
+
+.social-btn {
+  font-size: 1em;
+}
+
+.social-btn-icon {
+  @include icon();
+  @include icon-hover();
+}
+
+// Modifiers - Social media types
+.social-btn-icon--facebook {
+  @include icon-hover($facebook-colour);
+}
+
+.social-btn-icon--flickr {
+  @include icon-hover($flickr-colour);
+}
+
+.social-btn-icon--twitter {
+  @include icon-hover($twitter-colour);
+}

@@ -1,0 +1,132 @@
+// Module - Map
+// --------------------------------------
+
+.map-wrap {
+  position: relative;
+}
+
+.map {
+  width: 100%;
+  height: 25em;
+  border: $border-colour-regular solid 1px;
+
+  @media only screen and (min-width: $screen-md) {
+    height: 40em;
+  }
+
+  /* fixes potential theme css conflict */
+  img {
+    max-width: inherit !important;
+  }
+}
+
+.map--single {
+
+  @media only screen and (min-width: $screen-md) {
+    height: 95%;
+    min-height: 40em;
+  }
+}
+
+.map--single-contact {
+
+  @media only screen and (min-width: $screen-md) {
+    min-height: 25em;
+    height: 95%;
+  }
+}
+
+.map-directions-form {
+  position: relative;
+}
+
+.map-single-directions-input-error {
+  position: absolute;
+  top: -24px;
+  left: 15px;
+  background: $danger-colour;
+  color: #fff;
+  padding: 0 1em;
+}
+
+.map-scroll-stop {
+
+  @media only screen and (min-width: $screen-md) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Only show when no JS - used as a fallback
+.map-tiles-row {
+  #{$js} & {
+    display: none;
+  }
+}
+
+.map-tile {
+
+  animation-name: fadeInUp;
+
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+
+  // Loop to create cascading animation effect
+  @for $i from 2 through 100 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * .02}s;
+    }
+  }
+}
+
+.map-tile-image-wrap {
+  img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.map-btn-input {
+
+  @media only screen and (min-width: $screen-md) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.map-info-window {
+  img {
+    &.map-info-window-image {
+      @media only screen and (max-width: $screen-max-xs) {
+        max-width: 25%!important;
+      }
+    }
+  }
+}
+
+.map-reset {
+  position: absolute;
+  left: 2em;
+  bottom: 2em;
+}
+
+.map-tile-height-restriction {
+  height: 250px;
+
+  .u-responsive-img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+// Remove google logo from maps
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+  display:none;
+}
+

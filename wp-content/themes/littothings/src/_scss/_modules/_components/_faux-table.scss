@@ -1,0 +1,110 @@
+// Module - Res table (Responsive tables)
+// --------------------------------------------------
+.faux-table {
+  @include type-scale-base--small;
+  width: 100%;
+
+  display: table;
+
+  // Make the borders work!
+  border-collapse: collapse;
+}
+
+// Row
+// --------------------------------------------------
+.faux-table-row {
+  display: table-row;
+
+  &:not(:last-child) {
+    border-bottom: $border-thin solid $border-colour-regular;
+  }
+}
+
+// Modifier - Column headings
+.faux-table-row--head {
+  border-top: $border-thin solid $border-colour-regular;
+  font-weight: $weight-bold;
+}
+
+// Cell
+// --------------------------------------------------
+.faux-table-cell {
+  @extend %clearfix;
+
+  display: table-cell;
+
+  padding: 1em 0;
+
+  // Align last column buttos to the right by default
+  &:last-child.faux-table-cell--buttons {
+    text-align: right;
+  }
+}
+
+// Modifier - Cell contains buttons
+.faux-table-cell--buttons {
+  position: relative;
+
+  // Give space to buttons in this cell
+  .btn {
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+
+  // Vertically center the label
+  .faux-table-cell-label {
+    position: absolute;
+    left: 0;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: $screen-max-xs) {
+
+    // Fill space on small screens
+    .btn {
+      width: 100%;
+      display: block;
+      margin-right: 0;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1em;
+      }
+    }
+
+    // Remove float to allow element to take full width
+    .faux-table-cell-value {
+      float: none;
+    }
+
+    // Always hide the label on smaller screens
+    .faux-table-cell-label {
+      display: none;
+    }
+  }
+}
+
+// Label is hidden 
+.faux-table-cell-label {
+
+  // Hidden by default, overwritten by break modifiers
+  display: none;
+
+  font-weight: $weight-bold;
+}
+
+// Table modifiers - Break (screen size)
+// Add more values here as needed
+// --------------------------------------------------
+.faux-table--break-md {
+  @media (max-width: $screen-max-md) {
+    @include collapsed-faux-table;
+  }
+
+  @media (min-width: $screen-md) {
+    @include expanded-faux-table;
+  }
+}

@@ -1,0 +1,73 @@
+// Module - Checkbox & radio style
+// --------------------------------------------------
+.checkbox-group,
+.radio-group {
+  position: relative;
+  z-index: 1;
+
+  // Hide checkbox
+  input[type=checkbox],
+  input[type=radio] {
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+  }
+
+  // Label
+  label {
+    transition: color .2s linear,
+    transform .4s ease;
+
+    padding-left: $checkbox*2;
+
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+  }
+
+  .checkbox-icon {
+    width: $checkbox;
+    height: $checkbox;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -($checkbox/2);
+
+    background: #e1e1e1;
+    border-radius: 50%;
+  }
+
+  .checkbox-icon-empty {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity linear 0.2s, transform ease-in-out 0.1s;
+  }
+
+  .checkbox-icon-checked {
+    opacity: 0;
+    transform: scale(1.3);
+    transition: opacity linear 0.2s, transform ease-in-out 0.1s;
+  }
+
+  // Check state
+  input[type=checkbox]:checked,
+  input[type=radio]:checked {
+
+    &~.checkbox-icon-empty {
+      opacity: 0;
+      transform: scale(1.3);
+    }
+
+    &~.checkbox-icon-checked {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+
+
+

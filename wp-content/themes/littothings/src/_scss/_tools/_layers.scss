@@ -1,0 +1,46 @@
+// z-index layers
+// A clean way to deal with z-index layers in Sass
+// Based on http://css-tricks.com/handling-z-index/
+// --------------------------------------------------
+
+// A map of z layers
+// All z-index values should be set here
+
+$z-layers: (
+  'body': (
+    'base': -1
+  ),
+  'navs': (
+    'base': 100,
+    'sidebar': 110,
+    'item': 120,
+    'dropdown': 130
+  )
+);
+
+@function map-has-nested-keys($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return false;
+    }
+    $map: map-get($map, $key);
+  }
+  
+  @return true;
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+ 
+  @return $map;
+}
+
+@function z($layers...) {
+  @if not map-has-nested-keys($z-layers, $layers...) {
+    @warn "No layer found for `#{inspect($layers...)}` in $z-layers map. Property omitted.";
+  }
+ 
+  @return map-deep-get($z-layers, $layers...);
+}

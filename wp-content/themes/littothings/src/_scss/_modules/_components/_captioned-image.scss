@@ -1,0 +1,41 @@
+// Module - Captioned Image
+// --------------------------------------------------
+
+.captioned-graphic-group {}
+
+// link surrounding caption and image ()
+.captioned-graphic {
+	position: relative;
+	display: block;
+
+	&:not(:last-child) {
+		margin-bottom: 2em;
+	}
+}
+
+// custom style for image
+.captioned-graphic-img {
+	display: block;
+}
+
+// Has no positioning value - Use modifier below
+.captioned-graphic-title {
+	@include type-scale-base--small;
+
+	width: 100%;
+	position: absolute;
+	padding: .75em;
+
+	background-color: $core-brand-colour-dark;
+	color: $text-captioned;
+}
+
+// align caption to top of image
+.captioned-graphic-title--top {
+	top: 0;
+}
+
+// align caption to bottom of image
+.captioned-graphic-title--bottom {
+	bottom: 0;
+}

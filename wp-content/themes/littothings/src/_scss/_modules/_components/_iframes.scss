@@ -1,0 +1,56 @@
+// Embedded iFrames
+// --------------------------------------------------
+.video-container {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 56.25%;
+  height: 100vh;
+  overflow: hidden;
+  @media (min-width: $screen-md) {
+    height: 0;
+  }
+
+  #{$touch} & {
+    &:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  iframe, object, embed, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: $screen-max-md) {
+      transform: scale(2);
+    }
+
+    #{$touch} & {
+      display: none;
+    }
+
+  }
+
+  .video-container-overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $overlay-bg-colour;
+  }
+
+}

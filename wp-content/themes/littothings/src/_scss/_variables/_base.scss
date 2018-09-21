@@ -1,0 +1,392 @@
+// Global
+// -------------------------------------------------
+
+// Document font
+$font-size-base: 100%;
+
+// Document min width
+$document-min-width: 320px;
+
+// Breakpoints
+// Set in pixels due to inconsistent em rounding across browsers
+// The only way to avoid a gap when using min and max values
+// is to use px units with a single pixel difference
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1600px;
+
+$screen-max-xs: $screen-xs - 1px;
+$screen-max-sm: $screen-sm - 1px;
+$screen-max-md: $screen-md - 1px;
+$screen-max-lg: $screen-lg - 1px;
+$screen-max-xl: $screen-xl - 1px;
+
+// Height breakpoints
+$screen-min-height-lg: 800px;
+
+// Border radius
+$border-radius: 3px;
+
+// Border thickness
+$border-thick: 2px;
+$border-thin: 1px;
+
+// Global spacing
+// Effects all margins and padding across EVERYTHING!
+// --------------------------------------------------
+$global-spacing: prem(30);
+
+// Conditional classes
+// --------------------------------------------------
+
+// Is ie9
+$ie9: '.ie9';
+
+// js
+$js: '.js';
+$no-js: '.no-js';
+
+// Touch
+$touch: '.touchevents';
+$no-touch: '.no-touchevents';
+
+// Translate3d
+$translate3d: '.csstransforms3d';
+$no-translate3d: '.no-csstransforms3d';
+
+// Animations
+$cssanimations: '.cssanimations';
+$no-cssanimations: '.no-cssanimations';
+
+//Flexbox
+$flexbox: '.flexbox';
+$no-flexbox: '.no-flexbox';
+
+// Gradients
+$cssgradients: '.cssgradients ';
+$no-cssgradients: '.no-cssgradients';
+
+// Custom easing
+// --------------------------------------------------
+$ease-in: cubic-bezier(0.390, 0.250, 0.150, 0.915);
+$ease-elastic: cubic-bezier(0.425, -0.195, 0.005, 1.215);
+
+// Typography
+// --------------------------------------------------
+
+$font-family-heading: '-apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;';
+$font-family-body: '-apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;';
+
+// Use :400,400i,700 syntax
+$font-family-heading-extra-weights: '';
+$font-family-body-extra-weights: '';
+
+//Import google fonts
+$font-family-heading-import: 'https://fonts.googleapis.com/css?family=#{$font-family-heading}#{$font-family-heading-extra-weights}';
+$font-family-body-import: 'https://fonts.googleapis.com/css?family=#{$font-family-body}#{$font-family-body-extra-weights}';
+
+// Named weights
+$weight-thin: 300; // Ubuntu only
+$weight-regular: 400;
+$weight-medium: 500; // Ubuntu only
+$weight-bold: 700;
+
+// Line heights
+$line-height-body: 1.5;
+$line-height-heading: 1.6;
+
+// Colours
+// --------------------------------------------------
+
+// Core
+$core-brand-colour: #004889;
+$core-brand-secondary: #029c20;
+
+$core-brand-colour-dark: darken($core-brand-colour, 15%);
+$core-brand-colour-extra-dark: darken($core-brand-colour, 30%);
+
+$core-brand-colour-light: lighten($core-brand-colour, 10%);
+$core-brand-colour-extra-light: lighten($core-brand-colour, 30%);
+
+// Text
+$text-colour-heading: #333333;
+$text-colour-body: #434343;
+
+$enhanced-link-colour: saturate($core-brand-colour, 20%);
+
+// Text variants
+
+// Lighter
+$text-colour-body-light: lighten($text-colour-body, 10%);
+$text-colour-body-extra-light: lighten($text-colour-body, 30%);
+
+// Darker
+$text-colour-body-dark: darken($text-colour-body, 10%);
+
+// On a dark background
+$text-colour-heading-invert: #e1e1e1;
+$text-colour-body-invert: #a9acae;
+
+// Lighter
+$text-colour-body-invert-light: lighten($text-colour-body-invert, 15%);
+$text-colour-body-invert-extra-light: lighten($text-colour-body-invert, 20%);
+
+// Darker
+$text-colour-body-invert-dark: darken($text-colour-body-invert, 20%);
+$text-colour-body-invert-extra-dark: darken($text-colour-body-invert, 30%);
+
+// Captioned text
+$text-captioned: $text-colour-heading-invert;
+
+// Background
+$bg-colour-document: #cecfcf;
+$bg-colour-white: #fff; // Mostly primary content
+$bg-colour-light: #f9fbfb;
+$bg-colour-light-mid: #ebeff0; // Exakt pages
+$bg-colour-mid: #f2f5f6; // Info panels and opening sections
+$bg-colour-dark: #e7ebec;
+$bg-colour-extra-dark: #121d23; // Footer and dark breadcrumbs
+
+// Content background
+$content-bg: #e1e1e1;
+
+// Nav
+
+// Navbar height
+$nav-fixed-height: prem(60);
+
+// Padding
+$nav-padding: $global-spacing;
+
+// Light colours
+$nav-light-bg: #f2f2f2;
+$nav-light-text: #303030;
+$nav-light-link: $nav-light-text;
+$nav-light-link-hover: lighten($nav-light-link, 15%);
+$nav-light-link-hover-bg: darken($nav-light-bg, 8%);
+$nav-light-borders: darken($nav-light-bg, 15%);
+$nav-light-offcanvas-bg: darken($nav-light-bg, 5%);
+
+// Dark colours
+$nav-dark-bg: #303030;
+$nav-dark-text: #f2f2f2;
+$nav-dark-link: $nav-dark-text;
+$nav-dark-link-hover: lighten($nav-dark-link, 15%);
+$nav-dark-link-hover-bg: darken($nav-dark-bg, 8%);
+$nav-dark-borders: lighten($nav-dark-bg, 10%);
+$nav-dark-offcanvas-bg: darken($nav-dark-bg, 5%);
+
+// Transparent-ish colours
+$nav-trans-bg: rgba(0,0,0, 0.65);
+$nav-trans-text: #f2f2f2;
+$nav-trans-link: $nav-trans-text;
+$nav-trans-link-hover: lighten($nav-trans-link, 15%);
+// Changing color doesn't work due to rgb opacity so we up the opacity
+$nav-trans-link-hover-bg: rgba(0,0,0, 0.8);
+$nav-trans-borders: lighten($nav-trans-bg, 10%);
+$nav-trans-offcanvas-bg: darken($nav-trans-bg, 5%);
+
+// Custom colours
+$nav-custom-bg: #ad0a70;
+$nav-custom-text: #f2f2f2;
+$nav-custom-link: $nav-custom-text;
+$nav-custom-link-hover: lighten($nav-custom-link, 15%);
+$nav-custom-link-hover-bg: darken($nav-custom-bg, 8%);
+$nav-custom-borders: darken($nav-custom-bg, 5%);
+$nav-custom-offcanvas-bg: darken($nav-custom-bg, 5%);
+
+
+// Overlay background
+$overlay-bg-colour: rgba(darken($bg-colour-extra-dark, 10%), .65);
+
+// Borders
+
+$border-color-light: #d6d6d6;
+$border-color-dark: #efefef;
+
+$border-colour-regular: #d6d6d6; // The standard border colour
+$border-colour-forms: $border-colour-regular; // Form and interface elements
+
+$border-colour-emphasis: darken($border-colour-regular, 10%); // Form and interface elements
+
+$border-colour-regular-invert: #434647;
+$border-colour-emphasis-invert: lighten($border-colour-regular-invert, 10%);
+
+$box-shadow: 0px 5px 10px rgba(0,0,0, 0.2);
+
+// Social
+$facebook-colour: #3b5998;
+$twitter-colour: #00b0ed;
+$google-colour: #df4a32;
+$flickr-colour: #ff0084;
+$linkedin-colour: #007DB7;
+$youtube-colour: #bb0000;
+$spotify-colour: #84bb46;
+$email-colour: $text-colour-body-invert;
+
+// Files
+$pdf-colour: #C40202;
+$exe-colour: #02B74B;
+$zip-colour: #D19B02;
+
+// Traffic light colours
+$success-colour: #ddf2cc;
+$success-colour-text: #31ab26;
+$success-colour-light: lighten($success-colour, 5%);
+$success-colour-dark: darken($success-colour, 10%);
+
+$danger-colour: #c2baaf;
+$danger-colour-text: #c24242;
+$danger-colour-light: lighten($danger-colour, 5%);
+$danger-colour-dark: darken($danger-colour, 10%);
+
+$warning-colour: #e6a03c;
+$warning-colour-light: lighten($warning-colour, 5%);
+$warning-colour-dark: darken($warning-colour, 10%);
+
+$info-colour: #b6cbc7;
+$info-colour-text: #008ACB;
+
+$sale-colour: #cf963a;
+$sale-colour-light: lighten($sale-colour, 5%);
+$sale-colour-dark: darken($sale-colour, 15%);
+
+// Search filters selected
+$search-selected: #008ACB;
+
+// Validation
+$val-valid-colour: $core-brand-colour;
+
+// Gradients
+// --------------------------------------------------
+$gradient-core-brand-top: $core-brand-colour;
+$gradient-core-brand-bottom: $core-brand-colour-dark;
+
+// Icon colours
+// --------------------------------------------------
+
+// Generic
+$icon-dark-colour: $text-colour-heading;
+$icon-light-colour: #fff;
+
+// Buttons
+$icon-btn-colour: $text-colour-body;
+$icon-btn-primary-colour: #fff;
+
+// Stock warning
+// --------------------------------------------------
+$in-stock-colour: #008a00;
+$pending-stock-colour: #f1880b;
+$out-of-stock-colour: #f24c4c;
+
+// Grid system
+// --------------------------------------------------
+
+// Number of columns in the grid.
+$grid-columns: 12;
+
+// Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: $global-spacing;
+$grid-gutter-width-cell: $global-spacing;
+$grid-gutter-width-small: $global-spacing/2;
+
+$grid-cell-spacing-sm:    ($grid-gutter-width-cell / 2);
+$grid-cell-spacing-md:    $grid-gutter-width-cell;
+$grid-cell-spacing-lg:    ($grid-gutter-width-cell * 2);
+
+// Computed container sizes (xs absent because it's fluid)
+$container-sm: ((prem(720) + $grid-gutter-width));
+$container-md: ((prem(940) + $grid-gutter-width));
+$container-lg: ((prem(1140) + $grid-gutter-width));
+$container-xl: ((prem(1400) + $grid-gutter-width));
+
+$layout-space: (
+  'sm': $grid-gutter-width-small,
+  'md': $grid-gutter-width,
+  'lg': $grid-gutter-width,
+  'xl': $grid-gutter-width
+);
+
+
+// Sidebar
+// --------------------------------------------------
+$sidebar-section-margin-md: prem(46);
+$sidebar-section-margin-lg: prem(66);
+
+$sidebar-border-offset-md: ($sidebar-section-margin-md + $grid-gutter-width) / 2 - ($grid-gutter-width / 2);
+$sidebar-border-offset-lg: ($sidebar-section-margin-lg + $grid-gutter-width) / 2 - ($grid-gutter-width / 2);
+
+// Main Logo size
+// --------------------------------------------------
+$brand-logo-icon: 20em;
+
+// Icon
+// --------------------------------------------------
+$icon-base-size: 1em;
+
+// Forms
+// --------------------------------------------------
+$form-spacing-x: 1rem;
+$form-spacing-y: $form-spacing-x / 2;
+
+// Buttons
+// --------------------------------------------------
+$btn-padding-vertical: prem(15);
+$btn-padding-horizontal: prem(50);
+$btn-height: 1;
+$btn-font-size: pem(16);
+
+// Small
+$btn-small-padding-vertical: 0;
+$btn-small-padding-horizontal: 1.3rem;
+$btn-small-height: $btn-height - .5;
+
+$btn-small-font-size: pem(14);
+
+// Animation
+$btn-state-transition-speed: .15s;
+
+// Button checkbox size
+$checkbox: pem(16);
+
+// Inputs
+// --------------------------------------------------
+$input-padding-y: 0;
+$input-padding-x: 1.2rem;
+
+$input-height: 2.5rem;
+
+$input-font-size: pem(12);
+
+$input-message-arrow-size: prem(12);
+$input-message-x-distance: $input-padding-x;
+
+// Modify these values to change timing on validation messages
+$input-message-transition-speed: .3s;
+$input-message-transition-delay: .3s;
+
+$input-bg-colour: #fff;
+
+// Required modifier class name
+$input-required: '.val-set--required';
+
+
+// Checkboxs
+// --------------------------------------------------
+$checkbox-size: prem(9);
+$checkbox-size-very-large: prem(23);
+
+
+// Shop navbar
+// --------------------------------------------------
+$shop_navabar_size: prem(30);
+
+

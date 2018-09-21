@@ -1,0 +1,121 @@
+// Module - warnings
+// --------------------------------------------------
+.warning-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
+}
+.warning {
+
+  transition: background-color .2s linear;
+
+  display: block;
+  color: $icon-btn-primary-colour;
+  text-align: center;
+  padding: 1em 0 1em 0;
+
+  line-height: 1.3em;
+
+  font-size: pem(20);
+
+  @media (min-width: $screen-sm) {
+    padding: 1.5em 0 1.5em 0;
+  }
+}
+
+// Modifier - Javascript
+.warning--javascript {
+  background-color: $danger-colour;
+
+  #{$no-touch} &:hover {
+    background-color: $danger-colour-dark;
+  }
+}
+
+// Modifier - Browser
+.warning--browser {
+  background-color: $sale-colour;
+
+  #{$no-touch} &:hover {
+    background-color: $sale-colour-dark;
+  }
+}
+
+// Message positioner
+.warning-pos {
+  @extend %clearfix;
+
+  @media (min-width: $screen-sm) {
+    display: inline-block
+  }
+}
+
+// Icon
+.warning-icon {
+  font-size: 1.5em;
+  width: 1.2em;
+  height: 1.2em;
+
+  opacity: .75;
+
+  fill: $icon-light-colour;
+
+  @media (max-width: $screen-max-sm) {
+    margin-bottom: .5em;
+  }
+
+  @media (min-width: $screen-sm) {
+    font-size: 1em;
+    float: left;
+    margin-right: .75em;
+  }
+}
+
+// Text
+.warning-text {
+
+  display: block;
+
+  @media (min-width: $screen-sm) {
+    float: left;
+  }
+}
+
+.warning-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 99999;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.9);
+}
+
+.icon-warning-close {
+  width: 5em;
+  height: 5em;
+
+  position: absolute;
+  z-index: 999999;
+
+  top: 9em;
+  right: 5em;
+
+  fill: #ffffff;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 1em;
+
+  #{$no-js}#{$ie9} & {
+    top: 13em;
+  }
+}

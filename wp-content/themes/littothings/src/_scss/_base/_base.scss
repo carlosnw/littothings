@@ -1,0 +1,131 @@
+// Reset box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+// --------------------------------------------------
+* {
+  box-sizing: border-box;
+
+  // Remove tap highlight
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// Base
+// --------------------------------------------------
+body {
+  min-width: $document-min-width;
+
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  overflow-x: hidden;
+
+  &.boxed {
+
+    @media (min-width: $screen-md) {
+      margin: 2em 0;
+      background-color: $core-brand-secondary;
+    }
+  }
+}
+
+// Hide spritesheet
+// Remove it from document flow and hide
+// DO NOT USE DISPLAY:NONE, it affects the ability to render SVG linear gradients
+.spritesheet {
+  height: 0;
+  width: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+// Base Icon size
+.icon {
+  width: 1em;
+  height: 1em;
+}
+
+.icon-inline {
+  display: inline-block;
+}
+
+// Forms
+// --------------------------------------------------
+
+// Remove outline from focused input fields
+input,
+textarea,
+select,
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+input,
+textarea {
+  // Remove appearance
+  -webkit-appearance: none;
+  appearance:none;
+  -webkit-border-radius: 0;
+}
+
+// Remove default style from button
+button {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance:none;
+
+  background: none;
+}
+
+// Tables
+// --------------------------------------------------
+tr {
+    border-bottom: $border-thin solid $border-colour-regular;
+}
+
+thead {
+  th {
+    padding-top: 0;
+  }
+}
+
+tbody {
+  border-top: $border-thin solid $border-colour-regular;
+}
+
+th,
+td {
+  padding: 1em 0;
+  text-align: left;
+
+  // Space buttons inside a cell / head
+  .btn {
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+}
+
+th {
+  font-weight: $weight-bold;
+}
+
+tfoot {
+  border-top: $border-thin solid $border-colour-emphasis;
+
+  tr:not(:last-child) {
+    border-bottom: $border-thin solid $border-colour-emphasis;
+  }
+}

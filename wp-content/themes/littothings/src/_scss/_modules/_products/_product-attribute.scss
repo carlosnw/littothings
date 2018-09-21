@@ -1,0 +1,28 @@
+.product-attr {
+  border-left: $border-thin solid $border-colour-regular;
+  border-right: $border-thin solid $border-colour-regular;
+}
+
+.product-attr-item {
+  &:nth-child(2n) {
+    background: lighten($border-colour-regular, 11%);
+  }
+}
+
+.product-attr-item-title {
+  font-weight: $weight-bold;
+  padding-left: $global-spacing;
+  padding-right: $global-spacing;
+  white-space: normal;
+
+  @media only screen and (min-width: $screen-sm) {
+    white-space: nowrap;
+  }
+
+}
+
+.product-attr-item-value {
+  padding-left: $global-spacing;
+  padding-right: $global-spacing;
+  border-left: $border-thin solid $border-colour-regular;
+}

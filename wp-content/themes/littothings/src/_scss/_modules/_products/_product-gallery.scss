@@ -1,0 +1,24 @@
+// Module - Product gallery
+// --------------------------------------------------
+.product-gallery {
+
+  @extend %clearfix;
+  display: block;
+  margin-bottom: $global-spacing;
+
+}
+
+.product-gallery-item {
+
+  width: 29%;
+  float: left;
+  margin-right: $global-spacing/2;
+  margin-bottom: $global-spacing/2;
+
+  border: 1px solid $border-colour-regular;
+
+  @media only screen and (min-width: $screen-sm) {
+    margin-right: $global-spacing;
+    margin-bottom: $global-spacing;
+  }
+}

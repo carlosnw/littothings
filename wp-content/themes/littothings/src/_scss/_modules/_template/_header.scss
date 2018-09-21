@@ -1,0 +1,91 @@
+// Module - Site header
+// --------------------------------------------------
+
+// Brand
+// --------------------------------------------------
+
+.header {
+  background-color: $core-brand-colour-dark;
+  position: relative;
+  z-index: 30;
+}
+
+.home-slider {
+  position: relative;
+}
+
+.header-bg {
+
+  transition: filter 0.7s;
+
+  #{$blur-content} & {
+    filter: blur(5px);
+  }
+
+  &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &.video-bg {
+    @media (min-width: $screen-md) {
+      height: auto;
+    }
+  }
+}
+
+.header-overlay {
+
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header-fixed {
+
+}
+
+.header-title-wrap {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 30;
+  width: 100%;
+}
+
+.header-title {
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+
+  // Nav overlaps image which causes this to not look centered
+  // Add top margin of nav height to combat this
+  margin-top: $nav-fixed-height;
+  margin-bottom: 0;
+
+  @media (min-width: $screen-md) {
+    font-size: 2.2em;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: $screen-lg) {
+    font-size: 3em;
+  }
+
+}

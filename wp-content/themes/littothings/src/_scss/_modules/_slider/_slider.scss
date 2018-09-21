@@ -1,0 +1,182 @@
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-height: 500px;
+
+  transition: all 0.4s;
+
+}
+
+.slider-full {
+  background: $core-brand-colour-extra-dark;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+
+// To stop images flashing on first load
+.slider-full-slide {
+  opacity: 0;
+
+  &:first-of-type {
+    opacity: 1;
+    height: auto;
+  }
+
+  #{$slider-loaded} & {
+    opacity: 1;
+    height: auto;
+  }
+}
+
+.slider-full-image-wrap {
+
+  opacity: 0;
+  transition: opacity 0.5s linear;
+
+  #{$slider-loaded} & {
+    opacity: 1;
+  }
+
+}
+
+.slider-full-image-centered {
+
+  width: 100%;
+  max-width: 500px;
+
+  position: absolute;
+
+  z-index: 49;
+
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 0.5s linear;
+
+  #{$slider-loaded} & {
+    opacity: 1;
+  }
+}
+
+// Image
+.slider-full-image {
+
+  fill: #fff;
+
+  padding: $global-spacing;
+
+  // Center vertical & horizontal
+  position: relative;
+
+  z-index: 50;
+
+  transform: translate3d(0,0,0);
+
+  transition: all 0.3s;
+
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0, 0.3));
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0, 0.3));
+
+  @media (max-width: $screen-max-sm) {
+    width: 80%;
+  }
+
+  opacity: 0;
+
+  #{$slider-loaded} & {
+    opacity: 1;
+  }
+}
+
+.slider-full-image-bg {
+
+  width: 100%;
+  height: 100%;
+
+  // Center vertical & horizontal
+  position: absolute;
+
+  z-index: 1;
+
+  // Use -.1% to remove gap
+  top: 49.9%;
+
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  background: rgba(0,0,0, 1);
+
+  transition: all 0.3s;
+
+  #{$slider-loaded} & {
+    background: rgba(0,0,0, 0.4);
+  }
+}
+
+.slick-dots {
+
+  opacity: 0;
+
+  @extend %clearfix;
+  margin: 0;
+  bottom: 0.5em;
+
+  transition: opacity 0.5s linear;
+
+  #{$slider-loaded} & {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+  }
+
+  li {
+
+    width: 15px;
+    height: 15px;
+
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    transform: translateY(0);
+
+    transition: opacity 0.2s linear, transform 0.2s ease-in-out;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    button {
+
+      width: 15px;
+      height: 15px;
+
+      margin: 0;
+      line-height: 100%;
+
+      &:before {
+        font-size: 15px;
+        color: $core-brand-colour-light;
+
+        transition: all 0.2s linear;
+      }
+
+      &:hover {
+
+      }
+    }
+
+    &.slick-active button:before {
+      color: $core-brand-colour-extra-light;
+      opacity: 0.9;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+@font-face {
+  font-family: 'star';
+  src: url('../../fonts/star.eot');
+  src: url('../../fonts/star.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/star.woff') format('woff'),
+  url('../../fonts/star.ttf') format('truetype'),
+  url('../../fonts/star.svg#star') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WooCommerce';
+  src: url('../../fonts/WooCommerce.eot');
+  src: url('../../fonts/WooCommerce.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/WooCommerce.woff') format('woff'),
+  url('../../fonts/WooCommerce.ttf') format('truetype'),
+  url('../../fonts/WooCommerce.svg#WooCommerce') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../../fonts/fontawesome-webfont.eot');
+  src: url('../../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/fontawesome-webfont.woff2') format('woff2'),
+  url('../../fonts/fontawesome-webfont.woff') format('woff'),
+  url('../../fonts/Font-awesome/fontawesome-webfont.ttf') format('truetype'),
+  url('../../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.woocommerce-store-notice.demo_store {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  z-index: 9999999;
+
+  background-color: $warning-colour;
+  padding: $global-spacing/2 $global-spacing;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+// Globals
+.woocommerce {
+
+  .woocommerce-message {
+    background-color: $success-colour;
+    padding: $global-spacing/2;
+    margin-bottom: $global-spacing;
+    color: $success-colour-text;
+    position: relative;
+    padding-left: $global-spacing;
+    padding-top: $global-spacing/2;
+    padding-bottom: $global-spacing/2;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 1em;
+      background-color: $success-colour-text;
+      color: #fff;
+    }
+
+    .button {
+      float: right;
+      background-color: #fff;
+      color: $success-colour-text;
+      padding: 0.25em 0.5em;
+      font-size: 0.9em;
+
+      @media (max-width: $screen-md) {
+        display: block;
+        margin-right: 0;
+        margin-bottom: $global-spacing/2;
+      }
+
+    }
+  }
+
+  .woocommerce-error {
+    background-color: $danger-colour;
+    padding: $global-spacing/2;
+    margin-bottom: $global-spacing;
+    color: $danger-colour-text;
+    position: relative;
+    padding-left: $global-spacing;
+    padding-top: $global-spacing/2;
+    padding-bottom: $global-spacing/2;
+
+    &:before {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 1em;
+      background-color: $danger-colour-text;
+      color: #fff;
+    }
+
+    .button {
+      float: right;
+      background-color: #fff;
+      color: $danger-colour-text;
+      padding: 0.25em 0.5em;
+      font-size: 0.9em;
+
+      @media (max-width: $screen-md) {
+        display: block;
+        margin-right: 0;
+        margin-bottom: $global-spacing/2;
+      }
+
+    }
+  }
+
+  .woocommerce-info {
+    background-color: $info-colour;
+    padding: $global-spacing/2;
+    margin-bottom: $global-spacing;
+    color: $info-colour-text;
+    position: relative;
+    padding-left: $global-spacing;
+    padding-top: $global-spacing/2;
+    padding-bottom: $global-spacing/2;
+
+    &:before {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 1em;
+      background-color: $info-colour-text;
+      color: #fff;
+    }
+
+    .button {
+      float: right;
+      background-color: #fff;
+      color: $info-colour-text;
+      padding: 0.25em 0.5em;
+      font-size: 0.9em;
+
+      @media (max-width: $screen-md) {
+        display: block;
+        margin-right: 0;
+        margin-bottom: $global-spacing/2;
+      }
+
+    }
+  }
+
+  .button {
+    @extend .btn;
+    @extend .btn--secondary;
+  }
+}
