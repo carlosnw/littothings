@@ -1,0 +1,100 @@
+// Module - hero
+// --------------------------------------------------
+
+.hero {
+  position: relative;
+
+  min-height: 5em;
+  max-height: 350px;
+}
+
+.hero-img-overlay {
+  width: 100%;
+
+  // overlay needs to stretch past border
+  height: 100.5%;
+
+  // Center vertical & horizontal
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  background: rgba(0,0,0, 0.6);
+}
+
+.hero-title-wrap {
+  @extend %clearfix;
+
+  font-weight: $weight-bold;
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  text-align: center;
+
+  @media only screen and (max-width: $screen-sm) {
+    width: 90%;
+  }
+
+}
+
+.hero-title-container {
+
+  position: absolute;
+
+  padding-right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media only screen and (max-width: $screen-sm) {
+    left: $global-spacing;
+  }
+
+  @media only screen and (min-width: $screen-sm) {
+    width: $container-sm;
+    text-align: right;
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    width: $container-md;
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    width: $container-lg;
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    width: $container-xl;
+  }
+
+}
+
+.hero-title {
+  font-weight: $weight-bold;
+  color: #fff;
+
+  float: none;
+
+  @media only screen and (min-width: $screen-md) {
+    float: right;
+    width: 75%;
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    width: 65%;
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    width: 50%;
+  }
+}
+
+.hero-title--center {
+  text-align: center;
+  font-weight: $weight-bold;
+  color: #fff;
+}

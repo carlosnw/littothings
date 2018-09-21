@@ -1,0 +1,66 @@
+// Module - Product pagination
+// --------------------------------------------------
+
+// Navigation
+// --------------------------------------------------
+.paging-navigation {
+  text-align: center;
+  position: relative;
+  padding: $global-spacing/2;
+}
+
+// Numbers
+// Links
+// -------------------------------------------------
+.page-numbers {
+
+  font-size: 1.1em;
+  margin-right: 0.5em;
+
+  &.current {
+  }
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background: $core-brand-colour;
+  margin-right: 0;
+  color: #fff;
+  
+  &:after {
+    font-family: FontAwesome;
+    content: "\f101";
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+.prev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50px;
+  background: $core-brand-colour;
+  margin-right: 0;
+  color: #fff;
+
+  &:after {
+    font-family: FontAwesome;
+    content: "\f100";
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateY(-50%) translateX(-50%);
+  }
+}

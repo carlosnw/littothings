@@ -1,0 +1,103 @@
+// Module - Range Slider
+// --------------------------------------------------
+
+// Quantity and controls
+// --------------------------------------------------
+.qty-incrementor {
+  padding: 0 $qty-incrementor-clearance;
+}
+
+// Buttons
+// --------------------------------------------------
+.qty-incrementor-btn {
+  @include gradient-linear($gradient-core-brand-bottom, $gradient-core-brand-top);
+
+  transition:
+    background-position .2s ease,
+    background-color .2s ease,
+    color .2s ease;
+
+  position: absolute;
+
+  top: 50%;
+
+  width: $qty-incrementor-btn-size;
+  height: $qty-incrementor-btn-size;
+
+  background-color: $gradient-core-brand-bottom;
+  background-size: 1px 200%;
+  background-repeat: repeat-x;
+
+  margin-top: -($qty-incrementor-btn-size / 2);
+
+  border-radius: $border-radius;
+
+  fill: $icon-light-colour;
+
+  // Hover
+  #{$no-touch} &:hover {
+    background-position: 0 -.75em;
+  }
+
+  // Active
+  #{$no-touch} &:active,
+  #{$touch} &:active {
+    background-position: 0 -10em;
+  }
+
+  // Remove gradient filter and border radius in ie9
+  #{$ie9} &:active {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    border-radius: 0;
+  }
+
+  // Hide the buttons when JS is disabled
+  #{$no-js} & {
+    display: none;
+  }
+}
+
+// Minus
+.qty-incrementor-btn--minus {
+  left: 0;
+}
+
+// Plus button
+.qty-incrementor-btn--plus {
+  right: 0;
+}
+
+// Icon
+.qty-incrementor-btn-icon {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  width: .5em;
+  height: .5em;
+
+  margin-left: -.25em;
+  margin-top: -.25em;
+}
+
+// Input
+// --------------------------------------------------
+.qty-incrementor-input-pos {
+  position: relative;
+  height: $qty-incrementor-input-height;
+  width: $qty-incrementor-input-width;
+}
+
+// Input
+.qty-incrementor-input {
+
+  font-weight: $weight-bold;
+  //border: 0;
+  text-align: center;
+  padding: 0;
+
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,32 @@
+// Module - Nav custom
+// --------------------------------------------------
+
+.nav-custom {
+
+  background-color: $nav-custom-bg;
+
+  @include nav-colour-options(
+    $nav-custom-bg,
+    $nav-custom-text,
+    $nav-custom-link,
+    $nav-custom-link-hover,
+    $nav-custom-link-hover-bg
+  );
+
+  &.nav-borders {
+    .nav-item {
+      border-color: $nav-custom-borders;
+    }
+  }
+}
+
+.nav-off-canvas-custom {
+  @include nav-off-canvas-colour-options(
+    $nav-custom-bg,
+    $nav-custom-text,
+    $nav-custom-link,
+    $nav-custom-link-hover,
+    $nav-custom-link-hover-bg,
+    $nav-custom-offcanvas-bg
+  );
+}

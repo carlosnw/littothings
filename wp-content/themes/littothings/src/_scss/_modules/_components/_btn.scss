@@ -1,0 +1,663 @@
+// Module - Btn
+// --------------------------------------------------
+.btn {
+  @extend %touch-optimised;
+
+  transition:
+    background-position .2s ease,
+    background-color .2s ease,
+    color .2s ease;
+
+  font-size: $btn-font-size;
+  display: inline-block;
+  border-radius: 0;
+  background-color: transparent;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  position: relative;
+  line-height: $btn-height;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+
+  cursor: pointer;
+
+  // Remove background pos transition on error states
+  &#{$s-button-working},
+  &#{$s-button-success},
+  &#{$s-button-error} {
+    transition: 
+      background-color .2s ease,
+      color .2s ease;
+  }
+}
+
+// Button content
+// --------------------------------------------------
+.btn-content {
+
+  display: block;
+
+  transition: 
+    transform $btn-state-transition-speed ease,
+    opacity $btn-state-transition-speed linear;
+
+  transition-delay: $btn-state-transition-speed;
+
+  transform: scale(1);
+  opacity: 1;
+
+  // Hide if button state is applied
+  #{$s-button-working} &,
+  #{$s-button-error} &,
+  #{$s-button-success} & {
+    transition-delay: 0s;
+
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+// Icon
+// --------------------------------------------------
+.btn-icon {
+  transition: fill .2s ease;
+
+  width: pem(16);
+  height: pem(16);
+  margin-right: .3em; // 11px
+}
+
+// Modifier - If the icon is after button text
+// --------------------------------------------------
+.btn-icon--after {
+  margin-right: 0;
+  margin-left: .7em;
+}
+
+// Modifier - Small
+// --------------------------------------------------
+.btn--small {
+  font-size: $btn-small-font-size;
+
+  padding: 0.5em 1em;
+  line-height: $btn-small-height;
+}
+
+// Modifier - Primary
+// --------------------------------------------------
+.btn--primary {
+
+  background-color: $core-brand-colour;
+
+  color: #fff;
+
+  border: solid $border-thick $core-brand-colour;
+  position: relative;
+
+
+  // Hover
+  &:hover {
+    border-color: darken($core-brand-colour, 2%);
+    background-color: darken($core-brand-colour, 5%);
+  }
+
+  // Active
+  &:active {
+    border-color: darken($core-brand-colour, 8%);
+    background-color: darken($core-brand-colour, 10%);
+  }
+
+  // Remove gradient filter and border radius in ie9
+  #{$ie9} &:active {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    border-radius: 0;
+  }
+
+  // Colour the icons
+  .btn-icon,
+  .btn-state-icon {
+    fill: $icon-btn-primary-colour;
+  }
+}
+
+// Modifier - Primary
+// --------------------------------------------------
+.btn--secondary {
+
+  background-color: $core-brand-secondary;
+
+  color: #fff;
+
+  border: solid $border-thick $core-brand-secondary;
+  position: relative;
+
+
+  // Hover
+  &:hover {
+    border-color: darken($core-brand-secondary, 2%);
+    background-color: darken($core-brand-secondary, 5%);
+  }
+
+  // Active
+  &:active {
+    border-color: darken($core-brand-secondary, 8%);
+    background-color: darken($core-brand-secondary, 10%);
+  }
+
+  // Remove gradient filter and border radius in ie9
+  #{$ie9} &:active {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    border-radius: 0;
+  }
+
+  // Colour the icons
+  .btn-icon,
+  .btn-state-icon {
+    fill: $icon-btn-primary-colour;
+  }
+}
+
+
+// Twitter
+.btn--twitter {
+  @include btn-gradients($twitter-colour, #fff);
+}
+
+.btn--facebook {
+  @include btn-gradients($facebook-colour, #fff);
+}
+
+.btn--linkedin {
+  @include btn-gradients($linkedin-colour, #fff);
+}
+
+.btn--google {
+  @include btn-gradients($google-colour, #fff);
+}
+
+.btn--youtube {
+  @include btn-gradients($youtube-colour, #fff);
+}
+
+.btn--email {
+  @include btn-gradients($email-colour, #fff);
+}
+
+.btn--danger {
+  @include btn-gradients($danger-colour, #fff);
+}
+
+// Modifier - Secondary
+// --------------------------------------------------
+.btn--outline {
+  transition: 
+    border-color .2s linear,
+    background-color .2s ease,
+    color .2s ease;
+
+  color: $bg-colour-white;
+  border: $border-thick solid $border-colour-forms;
+
+  background-color: transparent;
+
+  .btn-icon {
+    fill: $text-colour-body;
+  }
+
+  // Hover
+  &:hover {
+    background-color: rgba(255,255,255, 0.05);
+  }
+
+  // Active
+  &:active {
+    background-color: rgba(255,255,255, 0.1);
+  }
+
+  // Light color mod
+  &-light {
+    color: $border-colour-forms;
+
+    // Hover
+    #{$no-touch} &:hover {
+      color: #ffffff;
+      border-color: #ffffff;
+
+      .btn-icon {
+        fill: #ffffff;
+      }
+    }
+
+    // Use a 3dtransform if they're supported
+    #{$no-touch}#{$translate3d} &:hover {
+      &:after {
+        transform: translate3d(0,0,0);
+      }
+    }
+
+    // Active
+    #{$no-touch} &:active,
+    #{$touch} &:active {
+      background-color: rgba($border-colour-emphasis, .1);
+      color: #ffffff;
+      border-color: #ffffff;
+
+      .btn-icon {
+        fill: #ffffff;
+      }
+    }
+
+  }
+}
+
+
+// Modifier - Animate
+// --------------------------------------------------
+.btn--animate {
+  transition:
+          border-color .2s linear,
+          background-color .2s ease,
+          color .2s ease;
+
+  color: $text-colour-body;
+  border: $border-thick solid $border-colour-forms;
+  background-color: #ffffff;
+
+  @media (max-width: $screen-max-xs) {
+    font-size: 0.9em;
+  }
+  
+  &:before {
+
+    $height: 0.4em;
+    $width: 4em;
+
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: $height;
+    width: $width;
+    left: 50%;
+    margin-left: -$width/2;
+    top: -($height + pem(2));
+    background: lighten($border-colour-forms, 5%);
+
+    transition:
+      top 0.1s linear,
+      height 0.1s linear 0.1s,
+      width 0.1s linear 0s,
+      left 0.1s linear 0s,
+      margin 0.1s linear 0s;
+  }
+
+  &:after {
+
+    $height: 0.4em;
+    $width: 4em;
+
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: $height;
+    width: $width;
+    left: 50%;
+    margin-left: -$width/2;
+    bottom: -($height + pem(2));
+    background: lighten($border-colour-forms, 5%);
+
+    transition:
+      bottom 0.1s linear,
+      height 0.1s linear 0.1s,
+      width 0.1s linear 0s,
+      left 0.1s linear 0s,
+      margin 0.1s linear 0s;
+  }
+
+  .btn-icon {
+    fill: $text-colour-body;
+  }
+
+  // Hover
+  #{$no-touch} &:hover {
+    color: $text-colour-heading;
+    background-color: transparent;
+
+    .btn-icon {
+      fill: $text-colour-heading;
+    }
+
+    &:before {
+      top: 0;
+      left: 0;
+      height: 50%;
+      width: 100%;
+      margin: 0;
+    }
+
+    &:after {
+      bottom: 0;
+      left: 0;
+      height: 50%;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  // Use a 3dtransform if they're supported
+  #{$no-touch}#{$translate3d} &:hover {
+    &:after {
+      transform: translate3d(0,0,0);
+    }
+  }
+
+  // Active
+  #{$no-touch} &:active,
+  #{$touch} &:active {
+    color: $text-colour-heading;
+    border-color: $border-colour-emphasis;
+
+    .btn-icon {
+      fill: $text-colour-heading;
+    }
+  }
+}
+
+// Button with checkbox
+// --------------------------------------------------
+
+.btn--checkbox {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+
+  // Zero the padding as the label needs to use its own padding for :checked
+  padding: 0;
+
+  // Hide checkbox
+  input[type=checkbox],
+  input[type=radio] {
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+  }
+
+  // Label
+  label {
+    transition: color .2s linear,
+    transform .4s ease;
+
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    padding: 0 2.75em 0 1.75em;
+  }
+
+  .checkbox-icon {
+    width: $checkbox;
+    height: $checkbox;
+
+    position: absolute;
+    z-index: -1;
+    right: $checkbox;
+    top: 50%;
+    margin-top: -($checkbox/2);
+
+    background: #e1e1e1;
+
+    border-radius: 50%;
+  }
+
+  .checkbox-icon-empty {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity linear 0.2s, transform ease-in-out 0.1s;
+  }
+
+  .checkbox-icon-checked {
+    opacity: 0;
+    transform: scale(1.3);
+    transition: opacity linear 0.2s, transform ease-in-out 0.1s;
+  }
+
+  // Check state
+  input[type=checkbox]:checked,
+  input[type=radio]:checked {
+
+    &~.checkbox-icon-empty {
+      opacity: 0;
+      transform: scale(1.3);
+    }
+
+    &~.checkbox-icon-checked {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+// Modifier - Tab Buttons
+// --------------------------------------------------
+
+.btn--tabs {
+
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+
+  transition:
+          border-color .2s linear,
+          background-color .2s ease,
+          color .2s ease;
+
+  color: $text-colour-body;
+
+  background-color: $bg-colour-mid;
+  border-radius: 0;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  // Hover
+  #{$no-touch} &:hover {
+
+    background-color: darken($bg-colour-dark, 5%);
+    color: $text-colour-heading;
+    border-color: $border-colour-emphasis;
+
+    .btn-icon {
+      fill: $text-colour-heading;
+    }
+  }
+
+  // Use a 3dtransform if they're supported
+  #{$no-touch}#{$translate3d} &:hover {
+    &:after {
+      transform: translate3d(0,0,0);
+    }
+  }
+
+  // Active
+  #{$no-touch} &:active,
+  #{$touch} &:active {
+    @include text-shadow-dark;
+    @include gradient-linear($core-brand-colour-extra-dark, $core-brand-colour-dark);
+
+    background-color: $core-brand-colour-extra-dark;
+    background-size: 1px 200%;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+    color: #fff;
+    position: relative;
+
+    .btn-icon {
+      fill: $text-colour-heading;
+    }
+  }
+
+  // Active state
+  #{$tab-active} & {
+    @include text-shadow-dark;
+    @include gradient-linear($core-brand-colour-extra-dark, $core-brand-colour-dark);
+
+    background-color: $gradient-core-brand-bottom;
+    background-size: 1px 200%;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+    color: #fff;
+    position: relative;
+
+    // Hover
+    #{$no-touch} &:hover {
+
+      color: #fff;
+
+    }
+
+    .btn-icon {
+      fill: $text-colour-heading;
+    }
+
+    @media only screen and (min-width: $screen-md) {
+      // Down arrow
+      &::after {
+        content: '';
+        position: absolute;
+        left: 42%;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid darken($core-brand-colour-dark, 7%);
+        clear: both;
+      }
+    }
+  }
+}
+
+// Button Social
+// --------------------------------------------------
+.btn--social-count {
+  padding: 0.5em 0 0.5em 2em;
+  line-height: 1;
+  border-top: 0;
+
+  //styleguide
+  margin-right: 10px;
+
+  &--none {
+    padding: 0.5em 2em 0.5em 2em;
+  }
+}
+
+.btn--social-count-amount {
+  padding: 0.5em 1em;
+  margin-left: 1.5em;
+  border-left: $border-thick solid rgba(255,255,255, 0.7);
+}
+
+// Modifier - Block
+// --------------------------------------------------
+.btn--block {
+  display: block;
+  width: 100%;
+
+  // Full width so padding shouldn't be a concern
+  // Helps in places where there isn't enough space to keep the button text on a single line
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Modifier - Control partner
+// --------------------------------------------------
+.btn--control-partner {
+  @media (max-width: $screen-max-sm) {
+    width: 100%;
+  }
+
+  @media (min-width: $screen-sm) {
+    float: left;
+  }
+}
+
+// Modifiers - Left and right alignment that collapse on small screen
+// --------------------------------------------------
+
+// Left
+.btn--left {
+  @media (max-width: $screen-max-sm) {
+    width: 100%;
+  }
+
+  @media (min-width: $screen-sm) {
+    float: left;
+  }
+}
+
+// Right
+.btn--right {
+  @media (max-width: $screen-max-sm) {
+    width: 100%;
+  }
+
+  @media (min-width: $screen-sm) {
+    float: right;
+  }
+}
+
+// Modifier - Expanding
+// Expands to block at lower screen size
+// --------------------------------------------------
+.btn--expanding {
+  @media (max-width: $screen-max-sm) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.btn--expanding-md {
+  @media (max-width: $screen-max-md) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.btn--expanding-xs {
+  @media (max-width: $screen-max-xs) {
+    display: block;
+    width: 100%;
+  }
+}
+
+// Modifier - In Content
+// Gives padding to buttons that are within content
+// --------------------------------------------------
+.btn--in-content {
+  margin: 2em 0;
+}
+
+
+// Modifier - Expanded content
+// Used to flip the icon when content is in view
+// --------------------------------------------------
+.btn--expand-content {
+  .btn-icon {
+
+    transform: translate3d(0,0,0) rotate(0deg);
+    backface-visibility: hidden;
+
+    transition: transform 0.3s linear;
+
+    #{$content-is-open} & {
+      transform: translate3d(0,0,0) rotate(180deg);
+    }
+  }
+}
+
+.btn--outlined {
+  background-color: transparent;
+}

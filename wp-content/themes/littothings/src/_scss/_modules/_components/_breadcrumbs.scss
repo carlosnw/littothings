@@ -1,0 +1,45 @@
+// Breadcrumbs component
+
+.breadcrumbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 100%;
+  padding: 0.5em 0;
+  background-color: $core-brand-colour-extra-dark;
+}
+
+.breadcrumbs-list {
+  @extend .l-container;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbs-list-item {
+  text-align: left;
+  display: inline-block;
+  color: rgba(255,255,255, 0.5);
+
+  a {
+    color: rgba(255,255,255, 0.5);
+  }
+
+  &:after {
+    content: '|';
+    margin: 0 10px;
+  }
+
+  &:last-of-type {
+    &:after {
+      content: '';
+      margin: 0;
+    }
+  }
+}
+
+.breadcrumb-current {
+  font-weight: 400;
+  color: rgba(255,255,255, 0.8);
+}

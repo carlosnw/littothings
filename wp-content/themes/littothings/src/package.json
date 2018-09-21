@@ -1,0 +1,29 @@
+{
+  "name": "littothings-theme",
+  "version": "1.0.0",
+  "author": "Litto Things",
+  "description": "A starter theme to be reused on future projects",
+  "homepage": "http://www.littothings.com",
+  "devDependencies": {
+    "browser-sync": "^2.x.x",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.x.x",
+    "gulp-load-plugins": "^1.x.x",
+    "gulp-rename": "^1.x.x",
+    "gulp-replace": "^1.x.x",
+    "gulp-sass": "^4.x.x",
+    "gulp-sourcemaps": "^2.x.x",
+    "gulp-svg-sprites": "^4.x.x",
+    "gulp-svgmin": "^2.x.x",
+    "gulp-uglify": "^3.x.x",
+    "gulp-util": "^3.x.x"
+  },
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}

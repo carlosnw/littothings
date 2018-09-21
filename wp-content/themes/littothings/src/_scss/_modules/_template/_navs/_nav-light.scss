@@ -1,0 +1,32 @@
+// Module - Nav light
+// --------------------------------------------------
+
+.nav-light {
+
+  background-color: $nav-light-bg;
+
+  @include nav-colour-options(
+    $nav-light-bg,
+    $nav-light-text,
+    $nav-light-link,
+    $nav-light-link-hover,
+    $nav-light-link-hover-bg
+  );
+
+  &.nav-borders {
+    .nav-item {
+      border-color: $nav-light-borders;
+    }
+  }
+}
+
+.nav-off-canvas-light {
+  @include nav-off-canvas-colour-options(
+    $nav-light-bg,
+    $nav-light-text,
+    $nav-light-link,
+    $nav-light-link-hover,
+    $nav-light-link-hover-bg,
+    $nav-light-offcanvas-bg
+  );
+}

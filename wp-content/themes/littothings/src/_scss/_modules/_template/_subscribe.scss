@@ -1,0 +1,149 @@
+// Module - Subscribe
+// --------------------------------------------------
+.subscribe {
+  background-color: $bg-colour-mid;
+  border-top: 1px solid $border-colour-regular;
+
+  @include content-space('padding-top', .8);
+  @include content-space('padding-bottom', .8);
+}
+
+// Wrapper element
+// Helps position children
+.subscribe-wrapper {
+  @extend %clearfix;
+  position: relative;
+}
+
+// Info
+// --------------------------------------------------
+.subscribe-info {
+  margin: 0;
+
+  @media only screen and (max-width: $screen-max-md) {
+    display: none;
+  }
+
+  @media only screen and (max-width: $screen-max-md) {
+    padding-bottom: 1.5em;
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  strong {
+    color: $text-colour-body-dark;
+  }
+}
+
+// Trims sentence to fit the screen size
+.subscribe-info-trim {
+  @media only screen and (max-width: $screen-max-lg) {
+    display: none;
+  }
+}
+
+// Converts case to maintain grammar after the sentence is sliced
+.subscribe-info-case {
+  @media only screen and (max-width: $screen-max-lg) {
+    text-transform: uppercase;
+  }
+}
+
+// Converts case to maintain grammar after the sentence is sliced
+.subscribe-info-newline {
+  @media only screen and (max-width: $screen-max-xs) {
+    display: block;
+  }
+}
+
+// Form
+// --------------------------------------------------
+.subscribe-form {
+  @extend %clearfix;
+  width:100%;
+
+  @media only screen and (min-width: $screen-md) {
+    float: right;
+    width:100%;
+  }
+}
+
+.subscribe-form-callback {
+  display: none;
+
+  #{$content-is-open} & {
+    display: block;
+  }
+}
+
+.subscribe-form-callback-input {
+    width:80%;
+}
+
+// Input wrapper
+// So we can include the right padding into a percentage width calculation
+.subscribe-form-input-wrapper {
+  display: block;
+
+  margin: 0;
+
+  @media only screen and (max-width: $screen-max-xs) {
+    padding-bottom: .625em;
+  }
+
+  @media only screen and (min-width: $screen-xs) {
+    float: left;
+    padding-right: $form-spacing-x / 2;
+    width: 50%;
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    min-width: 18em;
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    min-width: 24em;
+  }
+}
+
+// Input
+.subscribe-form-input {}
+
+// Wrapper
+.subscribe-form-button-wrapper {
+  @media only screen and (min-width: $screen-xs) {
+    padding-left: $form-spacing-x / 2;
+  }
+
+  @media only screen and (min-width: $screen-xs) {
+    float: left;
+    width: 50%;
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    width: auto;
+  }
+}
+
+// Button
+.subscribe-form-btn {
+  width: 100%;
+  display: block;
+
+  @media only screen and (max-width: $screen-max-md) {
+    padding: 0;
+  }
+}
+
+// Trim some of the text on larger screens
+.subscribe-form-btn-trim {
+
+  @media only screen and (min-width: $screen-md), only screen and (min-width: $screen-xs) and (max-width: $screen-max-sm) {
+    display: none;
+  }
+}

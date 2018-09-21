@@ -1,0 +1,30 @@
+// Module - Select
+// --------------------------------------------------
+
+// Base element
+// --------------------------------------------------
+.select-input {
+
+  // This will hide the arrow
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  position: relative;
+
+  height: 44px;
+  border-radius: 0;
+  border-color: $border-colour-regular;
+  background-color: transparent;
+  padding: 0.5em 1em;
+  width:100%;
+
+}
+
+.select-input-arrow {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: 2em;
+  margin-top: -(1em/2);
+  fill: $core-brand-colour-dark;
+}

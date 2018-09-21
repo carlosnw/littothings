@@ -1,0 +1,66 @@
+// Module - Search
+// The search form bar and search inputs
+// --------------------------------------------------
+
+.search-form-wrap {
+  width: 60%;
+  margin: $global-spacing*2 auto;
+  padding: $global-spacing;
+
+  @media only screen and (max-width: $screen-max-sm) {
+    width: 100%;
+  }
+
+}
+
+.search-form {
+
+  position: relative;
+
+  input[type=search] {
+
+    height: 3rem;
+
+    @include style-placeholder {
+      transition:
+              opacity .1s linear,
+              transform .2s ease,
+              color .1s linear;
+
+      color: lighten($text-colour-body, 40%);
+      transform: translate3d(0,0,0);
+      opacity: 1;
+    }
+    font-weight: $weight-thin;
+    border-width: $border-thick;
+    background-color: $core-brand-colour-dark;
+    color: #fff;
+
+  }
+
+}
+
+.icon-search-submit {
+
+  // Center vertical & horizontal
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  right: $icon-base-size/4;
+
+  width: 3rem;
+  height: 100%;
+
+  // Nudge icon to center
+  padding-left: $icon-base-size;
+
+  .icon {
+
+    fill: $text-colour-body-extra-light;
+
+    #{$no-touch} &:hover {
+      fill: #fff;
+    }
+  }
+}

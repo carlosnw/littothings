@@ -1,0 +1,498 @@
+// Module - Common
+// Styles that are commonly extended
+// or are used between modules are stored here
+// --------------------------------------------------
+
+// Slider Spritesheets
+// --------------------------------------------------
+%background-sprite {
+
+  // Must match the number of images in the spritesheet
+  $images-in-sheet: 8;
+
+  // Add background scale in relation to image size
+  background-size: #{$images-in-sheet}em;
+  background-image: url("../img/background-spritesheet.svg");
+}
+
+%loading-spinner {
+  @extend %background-sprite;
+
+  width: 1em;
+  height: 1em;
+
+  animation:
+          fade-in .7s linear forwards,
+          loading-spin .4s linear infinite;
+
+  // No animations
+  #{$no-cssanimations} & {
+    background-image: url("../img/slider-loader-fallback.gif");
+    background-position: center center;
+    background-size: 1em;
+  }
+}
+
+%loading-spinner--inverted {
+  background-position: -1em 0;
+
+  // No animations
+  #{$no-cssanimations} & {
+    background-image: url("../img/slider-loader-fallback-invert.gif");
+  }
+}
+
+
+// Editor content
+// --------------------------------------------------
+@mixin editor-content-elements {
+
+  // Restrain images in the editor
+  img {
+    max-width: 100%;
+    height: auto;
+
+    @media only screen and (max-width: $screen-max-xs) {
+      float: none!important;
+      clear: both;
+      margin: 0 auto;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  // WP - Alignment
+  // --------------------------------------------------
+
+  // Align left
+  .alignleft {
+    clear: both;
+    float: left;
+    margin: 0;
+    margin-right: 1em;
+
+    @media only screen and (max-width: $screen-max-xs) {
+      width: 100%!important;
+      margin: 0;
+    }
+  }
+
+  // Align right
+  .alignright {
+    float: right;
+    margin: 0;
+    margin-left: 1em;
+    margin-bottom: 1em;
+
+    @media only screen and (max-width: $screen-max-xs) {
+      width: 100%!important;
+      margin: 0;
+      margin-bottom: 1em;
+    }
+  }
+
+  // Align center
+  .aligncenter {
+    display: block;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+
+    @media only screen and (max-width: $screen-max-xs) {
+      width: 100%!important;
+      margin: 0;
+      margin-bottom: 1em;
+    }
+  }
+
+  // Align center
+  .alignnone {
+    margin: 0;
+    margin-bottom: 1em;
+    @media only screen and (max-width: $screen-max-xs) {
+      width: 100%!important;
+      margin: 0;
+      margin-bottom: 1em;
+    }
+  }
+
+  // WP - Caption
+  // --------------------------------------------------
+  .wp-caption {
+    max-width: 100%;
+    height: auto;
+
+    overflow: hidden;
+
+    background-color: #888;
+    color: #ffffff;
+
+    @media only screen and (max-width: $screen-max-xs) {
+      width: 100%!important;
+      float: none;
+      clear: both;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+
+      // Remove margin bottom as thinks this is a character
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+
+  // Text
+  .wp-caption-text {
+    @include type-scale-base--small;
+
+    position: relative;
+    z-index: 10;
+
+    color: #ffffff;
+    text-align: center;
+
+    margin-bottom: 0;
+
+    padding: .75em;
+    background-color: #888;
+  }
+
+  // WP - Blockquote adjustment
+  // --------------------------------------------------
+  blockquote {
+    display: inline-block;
+  }
+}
+
+@mixin input-standard-colours {
+  background-color: $input-bg-colour;
+  border: 2px solid $border-colour-forms;
+  color: $text-colour-body;
+}
+
+@mixin input-valid-colours {
+
+  // Don't apply these styles if disabled
+  &:not([disabled]) {
+    border-color: $val-valid-colour;
+    color: $val-valid-colour;
+
+    background-color: lighten($val-valid-colour, 70%);
+
+    // Style placeholder text
+    @include style-placeholder {
+      color: $val-valid-colour;
+    }
+  }
+}
+
+@mixin input-error-colours {
+
+  // Don't apply these styles if disabled
+  &:not([disabled]) {
+    border-color: $danger-colour;
+    color: $danger-colour;
+
+    background-color: lighten($danger-colour, 45%);
+
+    // Style placeholder text;
+    @include style-placeholder {
+      color: $danger-colour;
+    }
+  }
+}
+
+@mixin input-filled-colours {
+
+  // Don't apply these styles if disabled
+  &:not([disabled]) {
+    border-color: $border-colour-emphasis;
+    color: $text-colour-heading;
+  }
+}
+
+// Faux table collapsing
+// --------------------------------------------------
+
+// Styles when collapsed
+@mixin collapsed-faux-table() {
+
+  // Row modifications
+  .faux-table-row {
+    display: block;
+
+    // Add margin to all but the last child..
+    &:not(:last-child) {
+      margin-bottom: $grid-gutter-width * 3;
+    }
+
+    &:last-of-type {
+      .faux-table-cell:last-of-type {
+        margin-top: $grid-gutter-width;
+        padding: 0;
+      }
+    }
+  }
+
+  // Hide table head
+  .faux-table-row--head {
+    display: none;
+  }
+
+  // Position and show secondary labels
+  .faux-table-cell-label {
+    display: block;
+    float: left;
+  }
+
+  // Reposition table values
+  .faux-table-cell-value {
+    float: right;
+  }
+
+  // Stack cells
+  .faux-table-cell {
+    display: block;
+
+    &:not(:last-child) {
+      border-bottom: $border-thin solid $border-colour-regular;
+    }
+  }
+}
+
+// Styles when expanded (table mode)
+@mixin expanded-faux-table() {
+
+  .faux-table-row:last-of-type {
+
+    .faux-table-cell {
+      padding-bottom: 0;
+    }
+  }
+}
+
+// Content background
+// --------------------------------------------------
+@mixin content-bg-img {
+  //background: url(../img/content-bg-tile.png) repeat -2em -2em;
+}
+
+// Content separator image
+// --------------------------------------------------
+@mixin content-separator-img {
+  //background: url(../img/bg-texture-tile.jpg) repeat;
+}
+
+// Social icons
+// --------------------------------------------------
+
+// Colour and size
+@mixin icon($width: 1em, $height: 1em) {
+  transition: fill .2s linear;
+
+  display: block;
+
+  width: $width;
+  height: $height;
+
+  fill: $core-brand-colour-extra-dark;
+}
+
+@mixin icon-inline($width: 1em, $height: 1em) {
+  transition: fill .2s linear;
+
+  display: inline-block;
+
+  width: $width;
+  height: $height;
+
+  fill: $core-brand-colour-extra-dark;
+}
+
+// Hover colour
+@mixin icon-hover($hover-color: $icon-light-colour) {
+  #{$no-touch} &:hover,
+  #{$touch} &:active,
+  #{$no-touch} &:active {
+    fill:  $hover-color;
+  }
+}
+
+// Split lists into columns
+// --------------------------------------------------
+
+@mixin List-columns($column-count: 2, $column-gap: 1em) {
+
+  // Fix for safari needing height to display
+  min-height:100%;
+  height: 100%;
+  display: block;
+
+  // Split list into columns
+  columns: $column-count;
+
+  column-gap: $column-gap;
+
+  column-span: all;
+
+  // Stack list normally in ie9
+  #{$ie9} & {
+    columns: auto;
+  }
+}
+
+@mixin btn-gradients($bg-colour, $text-colour) {
+
+  @include gradient-linear(darken($bg-colour, 5%), lighten($bg-colour, 5%));
+  @include text-shadow-dark;
+
+  $btn-colour-top: darken($bg-colour, 5%);
+  $btn-colour-bottom: lighten($bg-colour, 5%);
+
+  background-color: darken($bg-colour, 5%);
+  background-size: 1px 200%;
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+  color: $text-colour;
+
+  border-top: $border-thick solid lighten($btn-colour-bottom, 3%);
+  border-bottom: $border-thick solid darken($btn-colour-top, 3%);
+  border-left: 0;
+  border-right: 0;
+  position: relative;
+
+  // Convert loader to inverted variant
+  .btn-state-icon-loader {
+    @extend %loading-spinner--inverted;
+  }
+
+
+  // Hover
+  #{$no-touch} &:hover {
+    background-position: 0 -2em;
+    border-top-color: darken($btn-colour-bottom, 3%);
+    border-bottom-color: darken($btn-colour-top, 3%);
+  }
+
+  // Active
+  #{$no-touch} &:active,
+  #{$touch} &:active {
+    background-position: 0 -20em;
+    border-top-color: darken($bg-colour, 5%);
+    border-bottom-color: darken($bg-colour, 5%);
+  }
+
+  // Remove gradient filter and border radius in ie9
+  #{$ie9} &:active {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    border-radius: 0;
+  }
+
+  // Colour the icons
+  .btn-icon,
+  .btn-state-icon {
+    fill: $text-colour;
+  }
+}
+
+// Reusable color scheme for the navbar
+// ------------------------------------
+@mixin nav-colour-options($bg,$li,$link,$link-hover,$link-hover-bg) {
+
+  @media (max-width: $screen-max-md) {
+    background-color: $bg;
+  }
+
+  .nav-list {
+    border-color: darken($bg, 10%);
+  }
+
+  .nav-item {
+    //background-color: $bg;
+    color: $li;
+    cursor: pointer;
+    &:hover {
+      background-color: $link-hover-bg;
+      transition: background-color 0.3s;
+      .nav-item-link {
+        color: $link-hover;
+      }
+    }
+    @media (max-width: $screen-max-md) {
+      border-bottom-color: darken($bg, 3%);
+      background-color: $bg;
+    }
+  }
+  .nav-item-link {
+    color: $link;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+  .icon {
+    fill: $li;
+  }
+
+  .nav-item-sub-wrap {
+    background-color: darken($bg, 3%);
+
+    .nav-item {
+      background-color: darken($bg, 3%);
+      &:hover {
+        background-color: darken($link-hover-bg, 3%);
+        transition: background-color 0.3s;
+        .nav-item-link {
+          color: $link-hover;
+        }
+      }
+
+      @media (max-width: $screen-max-md) {
+        border-bottom-color: darken($bg, 6%);
+      }
+    }
+  }
+}
+
+@mixin nav-off-canvas-colour-options($bg,$li,$link,$link-hover,$link-hover-bg,$offcanvas-bg) {
+
+  background-color: $bg;
+
+  .nav-off-canvas-wrap {
+    background-color: $offcanvas-bg;
+  }
+  .nav-item {
+    color: $li;
+    cursor: pointer;
+    &:hover {
+      background-color: $link-hover-bg;
+      transition: background-color 0.3s;
+      .nav-item-link {
+        color: $link-hover;
+      }
+    }
+  }
+  .nav-item-link {
+    color: $link;
+    &:hover {
+      color: $link-hover;
+    }
+  }
+  .icon {
+    fill: $li;
+  }
+
+}
+

@@ -1,0 +1,822 @@
+// Utility - Content layout
+// These are utility classes for laying out and styling page content
+// --------------------------------------------------
+
+// Internal padding for box elements
+// --------------------------------------------------
+.u-box-padding {
+  @extend %clearfix;
+  @include content-box-padding();
+}
+
+// Modifier - Taller top
+.u-box-padding--tall {
+  @include content-space('padding-top', 1.35);
+  @include content-space('padding-bottom', 1.35);
+}
+
+// Modifier - Taller top
+.u-box-padding--tall-top {
+  @include content-space('padding-top', 1.35);
+}
+
+// Modifier - Taller bottom
+.u-box-padding--tall-bottom {
+  @include content-space('padding-bottom', 1.35);
+}
+
+// Modifier - Short
+.u-box-padding--short {
+  @include content-space('padding-top', .65);
+  @include content-space('padding-bottom', .65);
+}
+
+// Modifier - Short top
+.u-box-padding--short-top {
+  @include content-space('padding-top', .65);
+}
+
+// Modifier - Short bottom
+.u-box-padding--short-bottom {
+  @include content-space('padding-bottom', .65);
+}
+
+.u-box-padding--tiny-top {
+  @include content-space('padding-top', .05);
+}
+
+.u-box-padding--tiny-bottom {
+  @include content-space('padding-bottom', .05);
+}
+
+.u-box-padding--tiny-top {
+  @include content-space('padding-top', .1);
+}
+
+.u-box-padding-small {
+  @extend %clearfix;
+  @include content-box-padding(0.5);
+}
+
+.u-box-padding--large {
+  @include content-space('padding-top', 1.35);
+  @include content-space('padding-right', 1.35);
+  @include content-space('padding-bottom', 1.35);
+  @include content-space('padding-left', 1.35);
+}
+
+// Margins
+// --------------------------------------------------
+
+.u-box-margin {
+  @include content-space('margin', 1.35);
+}
+
+.u-box-margin--short {
+  @include content-space('margin', .65);
+}
+
+.u-box-margin--top {
+  @include content-space('margin-top', 1.35);
+}
+
+.u-box-margin--top-normal {
+  @include content-space('margin-top', 1);
+}
+
+.u-box-margin--top-tall {
+  @include content-space('margin-top', 1.65);
+}
+
+.u-box-margin--bottom {
+  @include content-space('margin-bottom', 1.35);
+}
+
+.u-box-margin--bottom-tall {
+  @include content-space('margin-bottom', 2);
+}
+
+.u-box-margin--right {
+  @include content-space('margin-right', 1.35);
+}
+
+.u-box-margin--right-small {
+  @include content-space('margin-right', .90);
+}
+
+.u-box-margin--left {
+  @include content-space('margin-left', 1.35);
+}
+
+.u-box-margin--left-small {
+  @include content-space('margin-right', .90);
+}
+
+.u-box-margin--bottom-short {
+  @include content-space('margin-bottom', .65);
+
+  &--sm {
+    @media only screen and (max-width: $screen-max-xs) {
+      @include content-space('margin-bottom', .65);
+    }
+  }
+
+  &--md {
+    @media only screen and (max-width: $screen-max-md) {
+      @include content-space('margin-bottom', .65);
+    }
+  }
+}
+
+.u-box-margin--top-short {
+  @include content-space('margin-top', .65);
+}
+
+.u-box-margin--top-md {
+  @media only screen and (max-width: $screen-max-md) {
+    margin-top: 1.65em;
+  }
+}
+
+.u-box-margin--bottom-md {
+  @media only screen and (max-width: $screen-max-lg) {
+    margin-bottom: 1.65em;
+  }
+}
+
+.u-box-margin--top-xs {
+  @media only screen and (max-width: $screen-max-xs) {
+    margin-top: 1.65em;
+  }
+}
+
+.u-box-margin--bottom-sm {
+  @media only screen and (max-width: $screen-max-sm) {
+    @include content-space('margin-bottom', 1.35);
+  }
+}
+
+.u-margin-small-bottom {
+  margin-bottom: 0.5em;
+  &--sm {
+    @media only screen and (max-width: $screen-max-sm) {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &--md {
+    @media only screen and (max-width: $screen-max-md) {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.u-margin-right-standard {
+  margin-right: 1em;
+}
+
+.u-margin-left-standard {
+  margin-left: 1em;
+}
+
+.u-margin-bottom-standard {
+  margin-bottom: 1em;
+}
+
+.u-margin-top-standard {
+  margin-top: 1em;
+}
+
+.u-margin-right-x-small {
+  margin-right: 0.25em;
+}
+
+.u-margin-left-x-small {
+  margin-left: 0.25em;
+}
+
+.u-margin-bottom-x-small {
+  margin-bottom: 0.25em;
+}
+
+.u-margin-top-x-small {
+  margin-top: 0.25em;
+}
+
+// Decoration
+// --------------------------------------------------
+
+// Top border
+.u-border-top {
+  border-top: 1px solid $border-colour-regular;
+}
+
+.u-border-left {
+  border-left: 1px solid $border-colour-regular;
+}
+
+.u-border-right {
+  border-right: 1px solid $border-colour-regular;
+}
+
+// Top border for single panel
+.u-border-top--panel-single {
+   @media only screen and (max-width: $screen-max-sm) {
+    border-top: 1px solid $border-colour-regular;
+  }
+}
+
+// Dashed bottom border
+.u-dashed-border-top {
+  border-bottom: 1px dashed $border-colour-regular;
+}
+
+// Bottom border
+.u-border-bottom {
+  border-bottom: 1px solid $border-colour-regular;
+}
+
+// Dashed bottom border
+.u-dashed-border-bottom {
+  border-bottom: 1px dashed $border-colour-regular;
+}
+
+// Fancy border
+.u-border-fancy {
+
+  display: inline-block;
+
+  position: relative;
+  border-bottom: 1px solid $border-colour-regular;
+  padding-bottom: 0.5em;
+
+  &:after {
+
+    $height: 0.4em;
+    $width: 4em;
+
+    content: '';
+    position: absolute;
+    z-index: 0;
+    height: $height;
+    width: $width;
+    left: 50%;
+    margin-left: -$width/2;
+    bottom: -($height);
+    background: lighten($border-colour-forms, 5%);
+  }
+}
+
+.u-border-full {
+  border: 1px solid $border-colour-regular;
+}
+
+.u-bordered-img {
+  img {
+    @extend .u-border-full;
+  }
+}
+
+// Border
+.u-border-none {
+  border: 0;
+}
+
+.square {
+  float: left;
+  margin: 1em 1em 1em 0;
+  background-color: $core-brand-colour;
+}
+
+.u-background-image {
+  background-image: url('../img/grunge-wall.png');
+}
+
+// Off white colour for section
+.u-section-mid {
+  background-color: $bg-colour-light;
+}
+
+// Off white colour for section
+.u-section-light-mid {
+  background-color: $bg-colour-light-mid;
+}
+
+// Darker background for section
+.u-section-dark {
+  background-color: $bg-colour-mid;
+}
+
+// Alternate colours for elements like tables etc
+.u-section-mid-colour-switch {
+  background-color: $bg-colour-light;
+  &:nth-of-type(2n) {
+    background-color: $bg-colour-light-mid;
+  }
+}
+
+
+.u-section-colour-light {
+  background-color: $core-brand-colour-light;
+}
+
+.u-section-colour-lighter {
+  background-color: $core-brand-colour-extra-light;
+}
+
+.u-section-colour-dark {
+  background-color: $core-brand-colour-dark;
+}
+
+.u-section-colour-darker {
+  background-color: $core-brand-colour-extra-dark;
+}
+
+// Round corners
+.u-round-corners {
+  border-radius: $border-radius;
+}
+
+// Clearfix
+.u-clearfix {
+  @extend %clearfix;
+}
+
+// Add enhanced typographic styles
+.u-content-typography {
+  @include enhanced-content-typography;
+}
+
+// Add enhanced link style
+.u-enhanced-link {
+  @extend %enhanced-link;
+}
+
+// Add standard link style
+.u-standard-link {
+  @extend %standard-link;
+}
+
+// Enhanced list
+.u-enhanced-ul {
+  @extend %enhanced-ul;
+}
+
+.u-enhanced-ol {
+  @extend %enhanced-ol;
+}
+
+// Add a tiled background
+.u-tiled-background {
+  @include content-bg-img;
+}
+
+// Split list into columns
+.u-list-columns {
+
+  // default: 2 columns, 1em margin-bottom
+  @include List-columns();
+}
+
+// strip list of all styling
+.u-strip-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+// Pull floats
+// Pull either direction at specific breakpoints
+// Double stacked class names to increase specificity
+// --------------------------------------------------
+.u-pull-left.u-pull-left {
+  float: left;
+}
+
+.u-pull-right.u-pull-right {
+  float: right;
+}
+
+// XS
+.u-xs-pull-left.u-xs-pull-left {
+  @media (min-width: $screen-xs) {
+    float: left;
+  }
+}
+
+.u-xs-pull-right.u-xs-pull-right {
+  @media (min-width: $screen-xs) {
+    float: right;
+  }
+}
+
+// SM
+.u-sm-pull-left.u-sm-pull-left {
+  @media (min-width: $screen-sm) {
+    float: left;
+  }
+}
+
+.u-sm-pull-right.u-sm-pull-right {
+  @media (min-width: $screen-sm) {
+    float: right;
+  }
+}
+
+// MD
+.u-md-pull-left.u-md-pull-left {
+  @media (min-width: $screen-md) {
+    float: left;
+  }
+}
+
+.u-md-pull-right.u-md-pull-right {
+  @media (min-width: $screen-md) {
+    float: right;
+  }
+}
+
+// LG
+.u-lg-pull-left.u-lg-pull-left {
+  @media (min-width: $screen-lg) {
+    float: left;
+  }
+}
+
+.u-lg-pull-right.u-lg-pull-right {
+  @media (min-width: $screen-lg) {
+    float: right;
+  }
+}
+
+// XL
+.u-xl-pull-left.u-xl-pull-left {
+  @media (min-width: $screen-xl) {
+    float: left;
+  }
+}
+
+.u-xl-pull-right.u-xl-pull-right {
+  @media (min-width: $screen-xl) {
+    float: right;
+  }
+}
+
+// Clear properties
+// --------------------------------------------------
+.u-clear-margin {
+  margin: 0;
+}
+
+.u-clear-padding {
+  padding: 0;
+}
+
+.u-clear-padding-top {
+  padding-top: 0;
+}
+
+// Clear float -left
+// --------------------------------------------------
+.u-clear-left {
+  clear: left;
+}
+
+// Display
+// --------------------------------------------------
+
+.u-display-block {
+  display: block;
+}
+
+.u-display-inline {
+  display: inline;
+}
+
+.u-display-inline-block {
+  display: inline-block;
+}
+
+.u-display-none {
+  display: none;
+
+  &--xs {
+    @media only screen and (max-width: $screen-max-xs) {
+      display: none;
+    }
+  }
+
+  &--sm {
+    @media only screen and (max-width: $screen-max-sm) {
+      display: none;
+    }
+  }
+
+  &--md {
+    @media only screen and (max-width: $screen-max-md) {
+      display: none;
+    }
+  }
+
+  &--lg {
+    @media only screen and (max-width: $screen-max-lg) {
+      display: none;
+    }
+  }
+
+  &--xl {
+    @media only screen and (max-width: $screen-max-xl) {
+      display: none;
+    }
+  }
+}
+
+.u-position-relative {
+  position: relative;
+}
+
+// Hide / show
+// --------------------------------------------------
+.u-show-lg {
+  @media only screen and (max-width: $screen-max-lg) {
+    display: none;
+  }
+}
+
+// Positioning
+// --------------------------------------------------
+.u-relative {
+  position: relative;
+}
+
+// Sizing
+// --------------------------------------------------
+.u-fullwidth {
+  width: 100%;
+}
+
+.u-height-inner-page {
+
+  height: 15em;
+
+  @media only screen and (min-width: $screen-sm) {
+    height: 25em;
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    height: 30em;
+  }
+}
+
+.u-height-inner-page--smaller {
+
+  height: 15em;
+
+  @media only screen and (min-width: $screen-sm) {
+    height: 20em;
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    height: 25em;
+  }
+}
+
+.u-inner-height {
+  height: 100%;
+  min-height: 100%;
+}
+
+// Text
+// --------------------------------------------------
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-top {
+  transform: translateY(-50%);
+}
+
+.u-text-tertiary {
+  @include font-stack-tertiary-text;
+  @include type-scale-tertiary-small;
+}
+
+.u-text-smaller {
+  font-size: 0.85em;
+}
+
+.u-text-bigger {
+  font-size: 1.15em;
+}
+
+.u-text-bold {
+  font-weight: $weight-bold;
+}
+
+.u-text-light {
+  font-weight: $weight-thin;
+}
+
+// Colour variations
+.u-text-danger {
+  color: $danger-colour;
+}
+
+.u-text-warning {
+  color: $warning-colour;
+}
+
+.u-text-success {
+  color: $success-colour;
+}
+
+.u-text-info {
+  color: $info-colour;
+}
+
+.u-text-white {
+  color: #ffffff;
+}
+
+// Colour variations
+.u-icon-danger {
+  fill: $danger-colour;
+}
+
+.u-icon-warning {
+  fill: $warning-colour;
+}
+
+.u-icon-success {
+  fill: $success-colour;
+}
+
+.u-icon-spotify {
+  fill: $spotify-colour;
+}
+
+.u-icon-white {
+  fill: #ffffff;
+}
+
+.u-icon-dark {
+  fill: $core-brand-colour-extra-dark;
+}
+
+.u-icon-info {
+  fill: $info-colour;
+}
+
+.u-icon-large {
+  width: 5em;
+  height: 5em;
+}
+
+.u-icon-installer {
+  width: 5.5em;
+  height: 1.75em;
+}
+
+.u-icon-double {
+  width: 2em;
+  height: 2em;
+}
+
+.u-icon-bigger {
+  width: 1.75em;
+  height: 1.75em;
+}
+
+// Font Awesome
+
+.u-icon-address-bars {
+
+  padding: $global-spacing/2 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  position: relative;
+  
+}
+
+.u-icon-address-bars-value {
+
+  margin: 0;
+
+  font-size: 0.9em;
+  line-height: 1.5;
+  font-weight: $weight-bold;
+}
+
+.u-font-awesome-background {
+
+  position: relative;
+  background: $core-brand-colour-extra-dark;
+  padding: 1.1em;
+  border-radius: $border-radius;
+
+  @include text-shadow-dark;
+  @include gradient-linear($core-brand-colour-extra-dark, $core-brand-colour-dark);
+
+  background-color: $core-brand-colour-extra-dark;
+  background-size: 1px 200%;
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+  color: #fff;
+
+  margin-right: 0.5em;
+}
+
+.u-font-awesome-size {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
+
+  font-size: 1em;
+  color: #e1e1e1;
+}
+
+// Typography
+// --------------------------------------------------
+.u-small-text {
+  @include type-scale-base--small;
+}
+
+.u-title-divider {
+  @include block-divider;
+}
+
+.u-block-divider {
+  @include block-divider(1.25);
+}
+
+// Cursors
+// --------------------------------------------------
+.u-cursor-default {
+  cursor: default;
+}
+
+.u-cursor-pointer {
+  cursor: pointer;
+}
+
+// Images
+// --------------------------------------------------
+.u-responsive-img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.u-black-white-img {
+  filter: grayscale(100%);
+}
+
+// Videos
+// --------------------------------------------------
+.u-responsive-video {
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 56.5%;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+
+  &--widescreen {
+    padding-bottom: 56.34%;
+  }
+
+  &--vimeo {
+    padding-top: 0;
+  }
+
+  & embed, iframe, object, video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+// Utility - Editor content
+// These are styles that get applied to WYSIWYG content areas
+// --------------------------------------------------
+.u-editor-content {
+  @include editor-content-typography;
+  @include editor-content-elements;
+}

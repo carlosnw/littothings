@@ -1,0 +1,102 @@
+// Module - Input
+// --------------------------------------------------
+
+// Input
+[type=text],
+[type=email],
+[type=password],
+[type=number],
+[type=search],
+textarea {
+  @include input-standard-colours;
+  @include style-placeholder {
+    transition: 
+      opacity .1s linear,
+      transform .2s ease,
+      color .1s linear;
+
+    color: lighten($text-colour-body, 40%);
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+
+  transition: 
+    opacity .2s linear,
+    border-color .5s ease;
+
+  font-weight: 300;
+
+  border-width: 1px;
+  border-radius: 0;
+  padding: $input-padding-y $input-padding-x;
+  background-color: $bg-colour-light;
+
+  width: 100%;
+  display: block;
+}
+
+// Disabled
+input[disabled],
+select[disabled],
+textarea[disabled] {
+  opacity: .5;
+}
+
+input[type=search] {
+  box-sizing: border-box;
+}
+
+// Input by type
+// --------------------------------------------------
+[type=text],
+[type=email],
+[type=password],
+[type=search],
+[type=number] {
+  height: $input-height;
+  vertical-align: middle;
+}
+
+// Text area
+// --------------------------------------------------
+textarea {
+  min-height: 15em;
+  padding-top: $input-padding-x - .4;
+
+  resize:vertical;
+}
+
+// Hide spinners on number type
+// --------------------------------------------------
+[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button, 
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// Error class
+.input-error {
+  border-color: $danger-colour;
+  color: $danger-colour;
+
+  &::-webkit-input-placeholder {
+    color: $danger-colour;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $danger-colour;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: $danger-colour;
+  }
+
+  &:-ms-input-placeholder {
+    color: $danger-colour;
+  }
+}

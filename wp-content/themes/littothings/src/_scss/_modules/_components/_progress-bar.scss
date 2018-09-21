@@ -1,0 +1,24 @@
+// Module - Progress
+// --------------------------------------------------
+
+progress {
+
+  width: 75%;
+  height: 1em;
+
+  // Firefox
+  border: none;
+  background: $border-colour-regular;
+}
+
+progress::-webkit-progress-bar {
+  background: $border-colour-regular;
+}
+
+progress::-webkit-progress-value {
+  background-color: $core-brand-colour;
+}
+
+progress::-moz-progress-bar {
+  background-color: $core-brand-colour;
+}

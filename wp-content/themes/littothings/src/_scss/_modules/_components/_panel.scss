@@ -1,0 +1,18 @@
+// Module - Panel
+// Internal panel elements
+// --------------------------------------------------
+
+.panel {
+  @extend %clearfix;
+  border: solid 1px $border-colour-regular;
+
+  height: 100%;
+}
+
+.panel--shadow {
+  @include box-shadow;
+}
+
+.panel-title {
+  margin: 0;
+}

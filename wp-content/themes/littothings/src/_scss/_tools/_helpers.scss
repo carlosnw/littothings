@@ -1,0 +1,206 @@
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+// --------------------------------------------------
+%clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Cleafix as mixin
+// For use inside media queries
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Set content max width
+// --------------------------------------------------
+%document-max-width {
+  margin: auto;
+  max-width: pem(1500);
+}
+
+// Caps element width to an arbitrary value
+// Often used to prevent uncomfortable line width
+// --------------------------------------------------
+%cap-element-width {
+  max-width: 80rem;
+}
+
+
+// Add content space for each breakpoint
+@mixin content-space($property, $multiplier: 1) {
+
+  #{$property}: map-get($layout-space, 'sm') * $multiplier;
+
+  @media only screen and (min-width: $screen-md) {
+    #{$property}: map-get($layout-space, 'md') * $multiplier;
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    #{$property}: map-get($layout-space, 'lg') * $multiplier;
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    #{$property}: map-get($layout-space, 'xl') * $multiplier;
+  }
+}
+
+// Add padding to areas using the content padding variables
+// Takes arguments for which axis variables to use and an optional multipler
+@mixin content-box-padding($multiplier: 1) {
+
+  padding: map-get($layout-space, 'sm') * $multiplier;
+
+  @media only screen and (min-width: $screen-md) {
+    padding: map-get($layout-space, 'md') * $multiplier;
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    padding: map-get($layout-space, 'lg') * $multiplier;
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    padding: map-get($layout-space, 'xl') * $multiplier;
+
+  }
+}
+
+// Style placeholder text
+// --------------------------------------------------
+@mixin style-placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};
+}
+
+// Add 3d translate to stack based supplied 2 axis
+// --------------------------------------------------
+@mixin optimise-translate($x: 0, $y: 0) {
+  transform: translate($x, $y);
+  transform: translate3d($x, $y, 0);
+}
+
+// Generic block divider
+// --------------------------------------------------
+@mixin block-divider($multiplier: 1) {
+  margin-bottom: 1em * $multiplier;
+  padding-bottom: 1em * $multiplier;
+
+  border-bottom: 1px solid $border-colour-regular;
+}
+
+// Expand element width outside of its container on mobile
+// --------------------------------------------------
+@mixin expand-element {
+
+  // Make element span entire with of viewport despite its container
+  margin-left: -100%;
+  margin-right: -100%;
+
+  // Inner padding to add space removed by the negative margin
+  padding-left: 100%;
+  padding-right: 100%;
+}
+
+// Gradients
+// Generate gradients, some with filter options for legacy IE
+// --------------------------------------------------
+@mixin gradient-linear($from-color, $to-color) {
+  background-image: linear-gradient(to top, $from-color, $to-color);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$to-color}', EndColorStr='#{$from-color}');
+}
+
+@mixin gradient-linear-horizontal($from-color, $to-color) {
+  background-image: linear-gradient(to right, $from-color, $to-color);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$from-color}', EndColorStr='#{$to-color}');
+}
+
+@mixin gradient-linear-no-ie($from-color, $to-color) {
+  background-image: linear-gradient(to top, $from-color, $to-color);
+}
+
+@mixin gradient-linear-horizontal-no-ie($from-color, $to-color) {
+  background-image: linear-gradient(to right, $from-color, $to-color);
+}
+
+@mixin gradient-diagonal($from-color, $to-color) {
+  background-image: linear-gradient(135deg, $from-color, $to-color);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$from-color}', EndColorStr='#{$to-color}');
+}
+
+@mixin gradient-diagonal-invert($from-color, $to-color) {
+  background-image: linear-gradient(45deg, $from-color, $to-color);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$from-color}', EndColorStr='#{$to-color}');
+}
+
+// Touch ready optimizations
+// Apply a series of fixes to enhance clickable elements on touch devices
+// Taken from google fundamentals
+// https://developers.google.com/web/fundamentals/input/touch/activestates
+%touch-optimised {
+
+  // Webkit / Chrome Specific CSS to remove tap highlight color
+  -webkit-tap-highlight-color: transparent;
+
+  // Disable user-select on UI which Responds to Touch
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  // Firefox Specific CSS to remove button differences and focus ring */
+  background-image: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  // Override Element Outline in Focus State
+  &:focus {
+    outline:0;
+  }
+}
+
+// Text Shadow
+// Apply dark text shadow
+// --------------------------------------------------
+@mixin text-shadow-dark {
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+}
+
+// Box Shadow
+// Apply Box shadow
+// --------------------------------------------------
+@mixin box-shadow {
+  box-shadow: $box-shadow;
+}
+
+// 
+// --------------------------------------------------
+@mixin set-static-dims-and-offset {
+  margin: auto;
+  max-width: pem(1500);
+}

@@ -1,0 +1,497 @@
+// Grid system
+// Build out the grid using the utility mixins
+// --------------------------------------------------
+
+// Container widths
+// Set the container width, and override it for fixed navbars in media queries.
+// --------------------------------------------------
+.l-container {
+
+  @include container-fixed;
+
+  @media (min-width: $screen-sm) {
+    width: $container-sm;
+  }
+
+  @media (min-width: $screen-md) {
+    width: $container-md;
+  }
+
+  @media (min-width: $screen-lg) {
+    width: $container-lg;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: $container-xl;
+  }
+}
+
+// Flex container
+// Removes padding from container and lets the flex items pad themselves
+// --------------------------------------------------
+.l-container-flex {
+  @extend .l-container;
+  padding: 0;
+}
+
+// Boxed container
+// --------------------------------------------------
+.l-container-boxed {
+  overflow-x: hidden;
+
+  @media (max-width: $screen-max-md) {
+    width: 100%;
+  }
+}
+
+// Fluid container
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+// --------------------------------------------------
+.l-container-fluid {
+  @include container-fixed;
+}
+
+// Row
+// Rows contain and clear the floats of your columns.
+// --------------------------------------------------
+.l-row {
+  @include make-row;
+}
+
+// Columns
+// --------------------------------------------------
+
+// Single column for cases where only the padding is needed
+.l-col {
+  $gutter: $grid-gutter-width;
+
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+// Build grid
+@include make-grid-columns;
+
+// Extra small
+@media (min-width: $screen-xs) {
+  @include make-grid(xs);// Extra small grid
+}
+
+// Small
+@media (min-width: $screen-sm) {
+  @include make-grid(sm);
+}
+
+// Medium
+@media (min-width: $screen-md) {
+  @include make-grid(md);
+}
+
+// Large
+@media (min-width: $screen-lg) {
+  @include make-grid(lg);
+}
+
+// Extra large grid
+@media (min-width: $screen-xl) {
+  @include make-grid(xl);
+}
+
+// Flex system
+// --------------------------------------------------
+
+// --------------------------------------------------
+// grid full bleed (no internal padding)
+// --------------------------------------------------
+.l-row-flex--bleed {
+  [class*="l-col-flex-"] {
+    padding: 0;
+  }
+}
+
+// --------------------------------------------------
+// flex-wrap
+// --------------------------------------------------
+
+.l-row-flex--wrap {
+  @include flex-wrap(wrap);
+}
+
+.l-row-flex--no-wrap {
+  @include flex-wrap(nowrap);
+}
+
+.l-row-flex--wrap-reverse {
+  @include flex-wrap(wrap-reverse);
+}
+
+// --------------------------------------------------
+// flex-direction
+// --------------------------------------------------
+
+.l-row-flex--direction-row {
+  @include flex-direction(row);
+}
+
+.l-row-flex--direction-row-reverse {
+  @include flex-direction(row-reverse);
+}
+
+.l-row-flex--direction-column {
+  @include flex-direction(column);
+}
+
+.l-row-flex--direction-column-reverse {
+  @include flex-direction(column-reverse);
+}
+
+// --------------------------------------------------
+// align flex col cells (cross axis)
+// --------------------------------------------------
+
+.l-row-flex--align-start {
+  @include align-items(flex-start);
+}
+
+.l-row-flex--align-end {
+  @include align-items(flex-end);
+
+  // fallback to legacy vertical-align
+  [class*="l-col-flex-"] {
+    vertical-align: bottom;
+  }
+}
+
+.l-row-flex--align-center {
+  @include align-items(center);
+
+  // fallback to legacy vertical-align
+  [class*="l-col-flex-"] {
+    vertical-align: middle;
+  }
+}
+
+.l-row-flex--align-baseline {
+  @include align-items(baseline);
+
+  // fallback to legacy vertical-align
+  [class*="l-col-flex-"] {
+    vertical-align: baseline;
+  }
+}
+
+// --------------------------------------------------
+// align-content (cross axis)
+// --------------------------------------------------
+
+.l-row-flex--align-content-start {
+  @include align-content(flex-start);
+}
+
+.l-row-flex--align-content-end {
+  @include align-content(flex-end);
+
+  // fallback to legacy vertical-align
+  [class*="l-col-flex-"] {
+    vertical-align: bottom;
+  }
+}
+
+.l-row-flex--align-content-center {
+  @include align-content(center);
+}
+
+.l-row-flex--align-content-space-between {
+  @include align-content(space-between);
+}
+
+.l-row-flex--align-content-space-around {
+  @include align-content(space-around);
+}
+
+// --------------------------------------------------
+// align-self
+// --------------------------------------------------
+
+.l-row-flex--align-self-stretch {
+  @include align-self(stretch);
+}
+
+.l-row-flex--align-self-start {
+  @include align-self(flex-start);
+}
+
+.l-row-flex--align-self-end {
+  @include align-self(flex-end);
+  vertical-align: bottom;
+}
+
+.l-row-flex--align-self-center {
+  @include align-self(center);
+  vertical-align: middle;
+}
+
+.l-row-flex--align-self-baseline {
+  @include align-self(baseline);
+  vertical-align: baseline;
+}
+
+// --------------------------------------------------
+// justify-content (main axis)
+// --------------------------------------------------
+
+.l-row-flex--justify-start {
+  @include justify-content-start();
+}
+
+.l-row-flex--justify-end {
+  @include justify-content-end();
+
+  .l-row-flex--cell,
+  [class*="l-col-flex-"] {
+    @include resetTextAlign();
+  }
+}
+
+.l-row-flex--justify-center {
+  @include justify-content-center();
+
+  .l-row-flex--cell,
+  [class*="l-col-flex-"] {
+    @include resetTextAlign();
+  }
+}
+
+.l-row-flex--justify-space-between {
+  @include justify-content-space-between();
+
+  .l-row-flex--cell,
+  [class*="l-col-flex-"] {
+    @include resetTextAlign();
+  }
+}
+
+.l-row-flex--justify-space-around {
+  @include justify-content-space-around();
+
+  .l-row-flex--cell,
+  [class*="l-col-flex-"] {
+    @include resetTextAlign();
+  }
+}
+
+// --------------------------------------------------
+// flex col modifiers
+// --------------------------------------------------
+
+.l-col-flex--bleed {
+  padding: 0;
+}
+
+.l-col-flex--bleed-x {
+  padding: $grid-gutter-width 0;
+}
+
+.l-col-flex--bleed-y {
+  padding: 0 $grid-gutter-width;
+}
+
+.l-col-flex--bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 50%;
+}
+
+// --------------------------------------------------
+// flex cell modifiers
+// --------------------------------------------------
+
+.l-cell-flex--padding-sm {
+  padding: $grid-cell-spacing-sm;
+}
+
+.l-cell-flex--padding-md {
+  padding: $grid-cell-spacing-md;
+}
+
+.l-cell-flex--padding-lg {
+  padding: $grid-cell-spacing-lg;
+}
+
+.l-cell-flex-img {
+  display: block;
+  @include display-flex-only();
+  @include flex(0, 0, auto);
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.l-cell-flex-footer {
+  @include display-flex();
+  width: 100%;
+  margin-top: auto;
+}
+
+.l-row-flex {
+
+  @extend %clearfix;
+
+  @include display-flex();
+  @include flex-wrap();
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+
+  &:before,
+  &:after {
+    @include resetWhitespace();
+    max-width: 100%;
+  }
+
+  *:before,
+  *:after {
+    @include resetWhitespace();
+  }
+
+  // handle nested grids
+  & .l-row-flex {
+    @include flex(1, 1, auto);
+  }
+
+  // Reset the box-sizing so our grid works properly
+  * {
+    @include box-sizing(border-box);
+  }
+  *:before,
+  *:after {
+    @include box-sizing(border-box);
+  }
+
+  // handle when lists are used as a grid
+  list-style-type: none;
+}
+
+// --------------------------------------------------
+// flex grid col defaults
+// --------------------------------------------------
+
+[class*="l-col-flex-"] {
+  @include setupCols();
+}
+
+// --------------------------------------------------
+// flex grid cell defaults
+// --------------------------------------------------
+
+.l-cell-flex {
+  position: relative;
+  display: block;
+  @include flex(1, 1, auto);
+}
+
+// ie11 hack
+_:-ms-fullscreen, :root .l-cell-flex {
+  width: 100%;
+}
+
+// --------------------------------------------------
+// flex grid generation
+// --------------------------------------------------
+
+@include make-flex-grid(l-col-flex-);
+
+@media (min-width: $screen-xs) {
+  @include make-flex-grid(l-col-flex-xs-);
+}
+
+@media (min-width: $screen-sm) {
+  @include make-flex-grid(l-col-flex-sm-);
+}
+
+@media (min-width: $screen-md) {
+  @include make-flex-grid(l-col-flex-md-);
+}
+
+@media (min-width: $screen-lg) {
+  @include make-flex-grid(l-col-flex-lg-);
+}
+
+@media (min-width: $screen-xl) {
+  @include make-flex-grid(l-col-flex-lg-);
+}
+
+
+// --------------------------------------------------
+// flex grid col-auto
+// --------------------------------------------------
+
+.l-col-flex-auto {
+  @include setupAutoCols();
+}
+
+@media (min-width: $screen-xs) {
+  .l-col-flex-xs-auto {
+    @include setupAutoCols();
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .l-col-flex-sm-auto {
+    @include setupAutoCols();
+  }
+}
+
+@media (min-width: $screen-md) {
+  .l-col-flex-md-auto {
+    @include setupAutoCols();
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .l-col-flex-lg-auto {
+    @include setupAutoCols();
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .l-col-flex-xl-auto {
+    @include setupAutoCols();
+  }
+}
+
+// --------------------------------------------------
+// flex order helpers generation
+// --------------------------------------------------
+
+@include make-grid--order-helpers();
+
+@media only screen and (min-width: $screen-xs) {
+  @include loop-grid--order-helpers($grid-columns, '-xs');
+}
+
+@media only screen and (min-width: $screen-sm) {
+  @include loop-grid--order-helpers($grid-columns, '-sm');
+}
+
+@media only screen and (min-width: $screen-md) {
+  @include loop-grid--order-helpers($grid-columns, '-md');
+}
+
+@media only screen and (min-width: $screen-lg) {
+  @include loop-grid--order-helpers($grid-columns, '-lg');
+}
+
+@media only screen and (min-width: $screen-xl) {
+  @include loop-grid--order-helpers($grid-columns, '-xl');
+}
+
+
+
+

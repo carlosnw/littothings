@@ -1,0 +1,231 @@
+// Module - Forms
+// Used for wrapping form elements together (label + input), creating complex form parts
+// --------------------------------------------------
+
+.form-group {
+  @extend %clearfix;
+  position: relative;
+  margin-top: $grid-gutter-width;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.form-group-label {
+  position: relative;
+  z-index: -1;
+  background: lighten($core-brand-colour-extra-light, 20%);
+  padding: 0.25em $input-padding-x;
+  border: 1px solid $border-colour-regular;
+}
+
+
+/** Ninja form overides **/
+// Messy, but has to be done to overide their style formats
+
+.form-group-nj-wrap {
+
+  @extend %clearfix;
+  position: relative;
+  margin: 0;
+  margin-top: $grid-gutter-width;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  label {
+
+    width: auto!important;
+    display: inline-block!important;
+    margin: 0!important;
+    font-weight: normal!important;
+
+    z-index: -1;
+    background: lighten($core-brand-colour-extra-light, 20%);
+    padding: 0.25em $input-padding-x;
+    border: 1px solid $border-colour-regular;
+  }
+
+  [type=text],
+  [type=email],
+  [type=password],
+  [type=number],
+  [type=search],
+  textarea {
+    @include input-standard-colours;
+    @include style-placeholder {
+      transition:
+              opacity .1s linear,
+              transform .2s ease,
+              color .1s linear;
+
+      color: lighten($text-colour-body, 40%);
+      transform: translate3d(0,0,0);
+      opacity: 1;
+    }
+
+    transition:
+            opacity .2s linear,
+            border-color .5s ease;
+
+    font-weight: 300;
+
+    border-width: 1px;
+    border-radius: 0;
+    padding: $input-padding-y $input-padding-x;
+    background-color: $bg-colour-light;
+
+    width: 100%;
+    display: block;
+  }
+
+  [type=text],
+  [type=email],
+  [type=password],
+  [type=search],
+  [type=number] {
+    height: $input-height;
+    vertical-align: middle;
+  }
+}
+
+.bti-lm-col2-2-1 {
+  @media only screen and (min-width: $screen-xs) {
+    padding-right: 1em;
+  }
+}
+
+.bti-lm-col2-2-2 {
+  @media only screen and (min-width: $screen-xs) {
+    padding-left: 1em;
+  }
+}
+
+.ninja-form-top-margin-wrap {
+  margin-top: 40px!important;
+}
+
+.ninja-form-btn-wrap {
+
+  margin-bottom :0px!important;
+
+  label {
+    @extend .btn;
+    @extend .btn--secondary;
+    @extend .btn--small;
+    display: inline-block!important;
+    margin-top: 1em;
+  }
+
+  input .ninja-form-btn {
+    @extend .btn;
+  }
+
+  input[type=submit] {
+    @extend .btn;
+  }
+}
+
+.ninja-form-checkbox-wrap {
+  input[type=checkbox] {
+    appearance: checkbox;
+  }
+}
+
+.ninja-forms-form-wrap {
+  // Input
+  [type=text],
+  [type=email],
+  [type=password],
+  [type=number],
+  [type=search],
+  textarea {
+    @include input-standard-colours;
+    @include style-placeholder {
+      transition:
+              opacity .1s linear,
+              transform .2s ease,
+              color .1s linear;
+
+      color: lighten($text-colour-body, 40%);
+      transform: translate3d(0,0,0);
+      opacity: 1;
+    }
+
+    transition:
+            opacity .2s linear,
+            border-color .5s ease;
+
+    font-weight: 300;
+
+    border-width: 1px;
+    border-radius: 0;
+    padding: $input-padding-y $input-padding-x;
+    background-color: $bg-colour-light;
+
+    width: 100%;
+    display: block;
+  }
+
+  [type=text],
+  [type=email],
+  [type=password],
+  [type=search],
+  [type=number] {
+    height: $input-height;
+    vertical-align: middle;
+  }
+
+  @media only screen and (min-width: 1px) {
+
+    select.select-input {
+      -webkit-appearance: menulist;
+      -moz-appearance: menulist;
+      appearance: menulist;
+    }
+  }
+}
+
+.ninja-forms-required-items {
+  display: none;
+}
+
+.ninja-forms-error-msg {
+  background: $danger-colour;
+  color: #fff;
+  padding: $global-spacing/2;
+  margin-bottom: $global-spacing/2;
+}
+
+.ninja-forms-error {
+  [type=text],
+  [type=email],
+  [type=password],
+  [type=number],
+  [type=search],
+  textarea {
+    border-color: $danger-colour;
+    color: $danger-colour;
+  }
+}
+
+.ninja-forms-field-error {
+  color: $danger-colour!important;
+}
+
+.ninja-form-button-input-hidden {
+  display: none;
+}
+
+.ninja-forms-success-msg {
+  background: $success-colour;
+  color: #fff;
+  padding: 1em;
+
+  p {
+    margin: 0;
+  }
+}
+

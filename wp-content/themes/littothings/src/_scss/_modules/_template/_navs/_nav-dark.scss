@@ -1,0 +1,34 @@
+// Module - Nav dark
+// --------------------------------------------------
+
+.nav-dark {
+
+  background-color: $nav-dark-bg;
+
+  @include nav-colour-options(
+    $nav-dark-bg,
+    $nav-dark-text,
+    $nav-dark-link,
+    $nav-dark-link-hover,
+    $nav-dark-link-hover-bg
+  );
+
+  &.nav-borders {
+    .nav-item {
+      border-color: $nav-dark-borders;
+    }
+  }
+}
+
+.nav-off-canvas-dark {
+  @include nav-off-canvas-colour-options(
+    $nav-dark-bg,
+    $nav-dark-text,
+    $nav-dark-link,
+    $nav-dark-link-hover,
+    $nav-dark-link-hover-bg,
+    $nav-dark-offcanvas-bg
+  );
+
+  box-shadow: none;
+}

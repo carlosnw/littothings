@@ -1,0 +1,355 @@
+// Module - Primary nav
+// --------------------------------------------------
+
+// Main navbar
+.nav {
+  @include type-scale-nav;
+  position: relative;
+
+  z-index: z('navs', 'base');
+
+  @media (max-width: $screen-max-md) {
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $nav-fixed-height;
+  }
+
+  &--fixed {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 100%;
+
+    @media (max-width: $screen-max-md) {
+      position: fixed;
+      margin-top: 0;
+      width: 100%;
+      height: $nav-fixed-height;
+    }
+  }
+
+  &--contain-nav {
+    @media (min-width: $screen-md) {
+      width: $container-md;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: $container-lg;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: $container-xl;
+    }
+  }
+
+  &--float-top {
+    margin-top: $nav-fixed-height/2;
+    @media (max-width: $screen-max-md) {
+      margin-top: 0;
+    }
+  }
+}
+
+// Nav with borders on items
+.nav-borders {
+  .nav-item {
+
+    border-right: solid $border-thin $border-colour-regular;
+
+    &:last-of-type {
+      border-right: 0;
+    }
+
+    @media (max-width: $screen-max-md) {
+      border-right: 0;
+    }
+  }
+}
+
+.nav-borders-collapsed {
+  .nav-item {
+
+    @media (max-width: $screen-max-md) {
+      border-bottom-style: solid;
+      border-bottom-width: $border-thin ;
+    }
+  }
+}
+
+.nav-list-wrap {
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+}
+
+.nav-list {
+  padding: 0;
+  margin: 0;
+  align-items: center;
+
+  transform: translate3d(0,0,0) rotate(0.001deg);
+
+  @media (max-width: $screen-max-md) {
+
+    display: block;
+
+    margin-top: $nav-fixed-height;
+    border-top-width: $border-thin;
+    border-top-style: solid;
+
+    height : 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: height 0.6s;
+
+    #{$show-nav} & {
+      animation-duration: 0.6s;
+      animation-fill-mode: both;
+      animation-name: fadeInDown;
+    }
+
+    #{$close-nav} & {
+      animation-duration: 0.6s;
+      animation-fill-mode: both;
+      animation-name: fadeOutUp;
+    }
+  }
+
+}
+
+// Nav items
+.nav-item {
+
+  position: relative;
+  display: block;
+  //@include flex(1, 1, auto);
+  padding: $nav-padding/3;
+
+  text-align: center;
+
+  @media (max-width: $screen-max-md) {
+    text-align: left;
+    padding-left: $grid-gutter-width;
+  }
+
+  &--sub-menu {
+    overflow: visible;
+  }
+
+}
+
+.nav-item-link {
+  position: relative;
+  vertical-align: middle;
+  transition: color 0.3s;
+}
+
+.nav-icon-wrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &--left {
+    left: 1rem;
+  }
+
+  &--right {
+    right: 1rem;
+  }
+
+  &--right-lg {
+    right: 3rem;
+  }
+}
+
+.icon-toggle-menu {
+
+  position: absolute;
+  z-index: 100;
+  top: 1em;
+  margin-top: -(1.75em);
+
+  width: 1.75em;
+  height: 1.75em;
+  cursor: pointer;
+
+  transition: transform 0.3s, opacity 0.5s;
+
+  #{$show-nav} &, #{$show-offcanvas-nav} & {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: spinOut;
+  }
+
+  #{$close-nav} &, #{$close-offcanvas-nav} & {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: spinIn;
+  }
+
+  @media (min-width: $screen-md) {
+    display: none;
+  }
+}
+
+.icon-nav-logo {
+  width: 4em;
+  height: 4em;
+
+  @media (min-width: $screen-md) {
+    display: none;
+  }
+}
+
+.icon-toggle-menu-close {
+
+  opacity: 0;
+  z-index: 90;
+
+  #{$show-nav} &, #{$show-offcanvas-nav} & {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: spinIn;
+  }
+
+  #{$close-nav} &, #{$close-offcanvas-nav} & {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: spinOut;
+  }
+
+  @media (min-width: $screen-md) {
+    display: none;
+  }
+}
+
+
+// Sub menu dropdowns
+.nav-item-sub-wrap {
+
+  position: relative;
+  z-index: z('navs', 'dropdown');
+  width: 100%;
+  height : 0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: height 0.6s;
+
+  #{$show-nav-dropdown} & {
+    margin-top: ($nav-padding/3);
+    margin-bottom: - ($nav-padding/3);
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+  }
+
+  #{$close-nav-dropdown} & {
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+    animation-name: fadeOutUp;
+  }
+
+  @media (max-width: $screen-max-md) {
+
+    width: 100%;
+    text-align: left;
+  }
+
+  @media (min-width: $screen-md) {
+    position: absolute;
+    z-index: z('navs', 'dropdown');
+    top: ($nav-fixed-height - $nav-padding/3);
+    left: 0;
+    width: 20em;
+    max-width: 25em;
+  }
+}
+
+.icon-nav-dropdown {
+
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  right: 50%;
+
+  transform: translate3d(-50%,-50%,0) rotate(0deg);
+
+  width: 1.25em;
+  height: 1.25em;
+  cursor: pointer;
+
+  transition: transform 0.3s, opacity 0.5s;
+
+  #{$show-nav-dropdown} & {
+
+    top: 50%;
+    right: 50%;
+
+    transform: translate3d(-50%,-50%,0) rotate(180deg);
+  }
+}
+
+.nav-sub-list {
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item-sub {
+
+  position: relative;
+  z-index: z('navs', 'dropdown');
+
+  text-align: left;
+
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+
+  @media (max-width: $screen-max-md) {
+
+    margin-left: -$grid-gutter-width;
+    padding-left: ($grid-gutter-width)+($grid-gutter-width/2);
+
+    &:first-of-type {
+      box-shadow: inset 0px 3px 5px 0px rgba(0,0,0, 0.1);
+    }
+
+    &:last-of-type {
+      box-shadow: inset 0px -3px 5px 0px rgba(0,0,0, 0.1);
+    }
+  }
+
+  .nav-borders & {
+    border-right: 0;
+  }
+}
+
+// Extend the nav full width - otherwise, stays contained
+.nav {
+  @media (max-width: $screen-max-md) {
+    .l-container, .l-col {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+
+

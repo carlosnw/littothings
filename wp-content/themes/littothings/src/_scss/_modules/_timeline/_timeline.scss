@@ -1,0 +1,135 @@
+// Module - Timeline (History)
+// --------------------------------------------------
+
+.events-timeline {
+  //background: $cable-doctor-color;
+}
+
+.timeline a.events-year-tab {
+  color: rgba(255,255,255, 0.8);
+}
+
+.timeline-background {
+  background-size: cover;
+  background-position: center;
+}
+
+.timeline-content-wrap {
+  position: relative;
+  z-index: 10;
+}
+
+.timeline-content {
+
+  transform: translateX(2em);
+  transition: transform 0.7s ease-in-out;
+
+  a {
+    color: $border-colour-regular;
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    font-size: 1.3em;
+    font-weight: 300;
+  }
+}
+
+.timeline-content-title {
+
+  margin-bottom: 0.5em;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  transform: translateX(2em);
+  transition: transform 0.7s ease-in-out;
+
+  @media only screen and (min-width: $screen-md) {
+    font-size: 2.5em;
+  }
+}
+
+.events-content li.selected {
+
+  .timeline-content-title  {
+    transform: translateX(0em);
+  }
+
+  .timeline-content {
+    transform: translateX(0em);
+  }
+
+}
+
+.timeline-content-title-date {
+
+  display: inline-block;
+  //background: $cable-doctor-color;
+  padding: 0.1em;
+  color: #fff;
+  margin-right: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.timeline-overlay {
+  width: 100%;
+
+  // overlay needs to stretch past border
+  height: 100.5%;
+
+  // Center vertical & horizontal
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  background: rgba(0,0,0, 0.65);
+}
+
+.events-slide-icon {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) translateZ(0);
+
+  fill: rgba(255,255,255, 0.3);
+
+  transition: fill 0.3s;
+}
+
+.events-prev-slide {
+  left: 0;
+}
+
+.events-next-slide {
+  right: 0;
+}
+
+.events-slide {
+
+  position: absolute;
+
+  top: 0;
+  z-index: 5;
+
+  height: 100%;
+  padding: 1em;
+
+  overflow: hidden;
+  color: transparent;
+  white-space: nowrap;
+  transition: padding 0.3s, background-color 0.5s;
+
+  background-color: rgba(74,24,93,0.3);
+
+  &:hover {
+    padding: 1.5em;
+    background-color: rgba(74,24,93,0.8);
+
+    .events-slide-icon {
+      fill: rgba(255,255,255, 1);
+    }
+  }
+}

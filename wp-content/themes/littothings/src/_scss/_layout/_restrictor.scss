@@ -1,0 +1,20 @@
+// Layout - restrictor
+// --------------------------------------------------
+.l-restrictor {
+
+  @include container-fixed;
+  position: relative;
+
+  @media (min-width: $screen-md) {
+    width: $container-md;
+  }
+
+  @media (min-width: $screen-lg) {
+    width: $container-lg;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: $container-xl;
+  }
+}
+

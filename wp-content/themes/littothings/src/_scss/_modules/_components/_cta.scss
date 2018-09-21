@@ -1,0 +1,96 @@
+// CTA - mainly used in the header
+.cta {
+
+  padding-left: 2em;
+  padding-right: 2em;
+
+  width: 100%;
+  .cta-content {
+    width: 100%;
+  }
+
+  @media (min-width: $screen-sm) {
+    width: 75%;
+    .cta-content {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    width: $container-md;
+    .cta-content {
+      width: 75%;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    width: $container-lg;
+    .cta-content {
+      width: 60%;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    width: $container-xl;
+    .cta-content {
+      width: 60%;
+    }
+
+  }
+
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  color: #e1e1e1;
+
+  &--center {
+    text-align: center;
+    .cta-content {
+      float: none;
+      text-align: center;
+
+      @media (min-width: $screen-md) {
+        margin-left: 10%;
+      }
+
+      @media (min-width: $screen-lg) {
+        margin-left: 25%;
+      }
+
+    }
+  }
+
+  &--left {
+    .cta-content {
+      float: left;
+    }
+  }
+
+  &--right {
+    .cta-content {
+      float: right;
+    }
+  }
+
+
+}
+
+.cta-title {
+  @include type-scale-lg-h1;
+  font-style: italic;
+  margin-bottom: $global-spacing;
+  font-weight: $weight-thin;
+}
+
+.cta-title-highlight {
+  color: lighten($core-brand-secondary, 10%);
+  font-weight: $weight-bold;
+}
+
+.cta-body-text {
+  margin-bottom: ($global-spacing/2)+$global-spacing;
+}
+

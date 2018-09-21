@@ -1,0 +1,489 @@
+// Font stack
+// --------------------------------------------------
+
+//@import url($font-family-body-import);
+//@import url($font-family-heading-import);
+
+// Body
+@mixin font-stack-body {
+  font-family: $font-family-body, 'Helvetica', 'Arial', sans-serif;
+  font-style: normal;
+}
+
+// Heading
+@mixin font-stack-heading {
+  font-family: $font-family-heading, 'Helvetica', 'Arial', sans-serif;
+  font-style: normal;
+}
+
+// Headings font stack
+@mixin font-stack-tertiary-text {
+  font-family: $font-family-heading, 'Helvetica', 'Arial', sans-serif;
+  font-weight: $weight-bold;
+  font-style: normal;
+  color: $text-colour-body-light;
+}
+
+// Enhance tag styles
+// These improve basic styling of links, lists and other standard
+// typographic tags, apply only when needed, usually used in WYSIWYG content areas
+// --------------------------------------------------
+%standard-link {
+  transition: color .2s linear;
+
+  font-weight: $weight-bold;
+  color: $enhanced-link-colour;
+
+  #{$no-touch} &:hover,
+  #{$touch} & {
+    text-decoration: underline;
+    color: darken($enhanced-link-colour, 15%);
+  }
+}
+
+// Enhanced link styles
+%enhanced-link {
+  font-weight: $weight-bold;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: bottom;
+  position: relative;
+  overflow: hidden;
+  color: $enhanced-link-colour;
+
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $border-thick;
+    color: $enhanced-link-colour;
+  }
+
+  // Hover
+  #{$no-touch} &:hover,
+  #{$no-touch} &:active,
+  #{$touch} &:active {
+    color: darken($enhanced-link-colour, 15%);
+  }
+}
+
+// Enhanced unordered lists
+%enhanced-ul {
+  list-style: none;
+
+  li {
+    padding-left: 2em;
+    position: relative;
+    margin-bottom: .75em;
+
+    // The faux "bullet" element
+    &:before {
+
+      content: "";
+      position: absolute;
+
+      left: 0;
+      top: .65em;
+
+      //border-radius: $border-radius;
+      background-color: $core-brand-colour;
+
+      @media only screen and (min-width: $screen-lg) {
+        top: .75em;
+      }
+    }
+  }
+}
+
+// Enhanced unordered lists
+%enhanced-ol {
+  $list-spacing: 2.5em;
+  
+  list-style: none;
+
+  counter-reset: numbering;
+
+  li {
+    padding-left: 2em;
+    position: relative;
+    margin-bottom: .75em;
+
+    &:before {
+      @include font-stack-heading;
+      
+      text-align: left;
+      width: $list-spacing / 2;
+      content: counter(numbering);
+      counter-increment: numbering;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $core-brand-colour;
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+// Type scale
+// --------------------------------------------------
+
+// Smaller tartiary details, generally block caps (So appears taller than what you would assume)
+@mixin type-scale-tertiary-small-rem {
+  font-size: prem(10);
+
+  @media only screen and (min-width: $screen-lg) {
+    font-size: prem(11);
+  }
+}
+
+// Smaller tartiary details, generally block caps (So appears taller than what you would assume)
+@mixin type-scale-tertiary-small {
+  font-size: pem(10);
+  
+  @media only screen and (min-width: $screen-lg) {
+    font-size: pem(11);
+  }
+
+}
+
+// Base
+@mixin type-scale-base {
+  font-size: pem(16);
+}
+
+// Base
+@mixin type-scale-base--small {
+  font-size: pem(16);
+}
+
+// h1 Large
+@mixin type-scale-lg-h1 {
+  font-size: pem(32);
+
+  @media only screen and (min-width: $screen-sm) {
+    font-size: pem(45);
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    font-size: pem(48);
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    font-size: pem(58);
+  }
+
+}
+
+// h1
+@mixin type-scale-h1 {
+  font-size: pem(22);
+
+  @media only screen and (min-width: $screen-sm) {
+    font-size: pem(26);
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    font-size: pem(30);
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    font-size: pem(32);
+  }
+
+}
+
+// h2
+@mixin type-scale-h2 {
+  font-size: pem(20);
+
+  @media only screen and (min-width: $screen-sm) {
+    font-size: pem(22);
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    font-size: pem(24);
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    font-size: pem(26);
+  }
+
+}
+
+// h3
+@mixin type-scale-h3 {
+  font-size: pem(18);
+
+  @media only screen and (min-width: $screen-sm) {
+    font-size: pem(20);
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    font-size: pem(22);
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    font-size: pem(24);
+  }
+
+}
+
+// h4
+@mixin type-scale-h4 {
+  font-size: pem(18);
+
+  @media only screen and (min-width: $screen-sm) {
+    font-size: pem(18);
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    font-size: pem(20);
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    font-size: pem(22);
+  }
+
+}
+
+// h5
+@mixin type-scale-h5 {
+
+  // Use body scale as the lowest
+  @include type-scale-base;
+}
+
+// Top Nav items
+@mixin type-scale-nav-top {
+
+  @include font-stack-heading;
+  font-size: pem(15);
+
+  @media only screen and (min-width: $screen-sm) {
+    font-size: pem(13);
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    font-size: pem(14);
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    font-size: pem(15);
+  }
+
+}
+
+
+// Main Nav items
+@mixin type-scale-nav {
+
+  @include font-stack-heading;
+  font-size: pem(16);
+
+  @media only screen and (min-width: $screen-md) {
+    font-size: pem(15);
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+    font-size: pem(16);
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    font-size: pem(17);
+  }
+
+}
+
+// Type basics
+// --------------------------------------------------
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  @include font-stack-body;
+
+  color: $text-colour-body;
+  font-weight: $weight-regular;
+  line-height: $line-height-body;
+}
+
+strong {
+  font-weight: $weight-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+// Reset margins and padding 
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+// Headings
+// --------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include font-stack-heading;
+
+  margin-bottom: 1em;
+  line-height: $line-height-heading;
+  font-weight: $weight-medium;
+}
+
+// Apply scales
+h1 {
+  @include type-scale-h1;
+}
+
+h2 {
+  @include type-scale-h2;
+}
+
+h3 {
+  @include type-scale-h3;
+}
+
+h4 {
+  @include type-scale-h4;
+}
+
+h5 {
+  @include type-scale-h5;
+}
+
+// Body content
+// --------------------------------------------------
+p {
+  @include type-scale-base;
+
+  margin-bottom: 2em;
+  line-height: $line-height-body;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Lists
+// --------------------------------------------------
+ul,
+ol {
+  
+  margin-bottom: 2em;
+  padding-left: 1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Links
+// --------------------------------------------------
+a {
+  color: $text-colour-body;
+  text-decoration: none;
+}
+
+// Blockquote
+// --------------------------------------------------
+blockquote {
+  border-left: 3px solid $core-brand-colour;
+  padding-left: 2em;
+  margin: 2em 2em 2em 0;
+
+  font-style: italic;
+
+  // tinymce will sometimes wrap paras
+  p {
+    font-style: italic;
+  }
+}
+
+// Address
+// --------------------------------------------------
+address {
+
+  // Remove italics
+  font-style: normal;
+}
+
+// Horizontal rule
+// --------------------------------------------------
+hr {
+  border: 0;
+  border-top: $border-thin solid $border-colour-regular;
+  margin: 2em 0;
+  height: $border-thin;
+}
+
+// Table
+// --------------------------------------------------
+table {
+  @include type-scale-base--small;
+}
+
+// Enhanced content styles
+// --------------------------------------------------
+@mixin enhanced-content-typography {
+  
+  // Enhance unordered styles
+  ul {
+    @extend %enhanced-ul;
+  }
+
+  // Enhance ordered list styles
+  ol {
+    @extend %enhanced-ol;
+  }
+
+  // Style links
+  a {
+    @extend %enhanced-link;
+  }
+}
+
+
+// Editor content styles
+// --------------------------------------------------
+@mixin editor-content-typography {
+
+  // Restrain images to inside the content area
+  img {
+    max-width: 100%;
+  }
+
+  // Enhance link styles
+  ul {
+    @extend %enhanced-ul;
+
+    li {
+      margin-bottom: 0.3em;
+    }
+  }
+
+  ol {
+    @extend %enhanced-ol;
+  }
+
+  // Style links
+  a {
+    @extend %standard-link;
+  }
+}

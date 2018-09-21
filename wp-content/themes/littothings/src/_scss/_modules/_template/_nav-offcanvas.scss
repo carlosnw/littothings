@@ -1,0 +1,413 @@
+// Off canvas
+.nav-off-canvas {
+
+  position: relative;
+  z-index: z('navs', 'sidebar');
+  width: 100%;
+
+  height: $nav-fixed-height;
+
+  // -margin to give fixed effect behind nav bar (trans menu mainly)
+  & ~ .l-header {
+    margin-top: - $nav-fixed-height;
+  }
+
+  // Sidebar open
+  &#{$show-offcanvas-nav} {
+
+    position: fixed;
+
+    // now its fixed we can reset margin
+    margin-top: 0;
+
+    // now its fixed we can reset margin
+    & ~ .l-header {
+      margin-top: 0;
+    }
+  }
+
+  // Fixed
+  &--fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    // Fixes the out of flow issue
+    margin-top: 0;
+    //
+    & ~ .l-header {
+      margin-top: 0;
+    }
+
+    // Sidebar open
+    &#{$show-offcanvas-nav} {
+
+      position: fixed;
+
+      // now its fixed we can reset margin
+      margin-top: 0;
+
+      // now its fixed we can reset margin
+      & ~ .l-header {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Fixed
+  &--boxed {
+    // Fixes the out of flow issue
+    margin-top: 0;
+
+    position: relative;
+
+    width: auto;
+
+    //
+    & ~ .l-header {
+      margin-top: -3.75rem;
+    }
+
+    // Sidebar open
+    &#{$show-offcanvas-nav} {
+
+      position: relative;
+
+      // now its fixed we can reset margin
+      margin-top: 0;
+
+      // now its fixed we can reset margin
+      & ~ .l-header {
+        margin-top: -3.75rem;
+      }
+    }
+  }
+}
+
+.nav-off-canvas-wrap {
+
+  position: absolute;
+  top: 0;
+  z-index: 55;
+
+  height: 100%;
+  width: auto;
+  opacity: 0;
+
+  // Makes sidebar full height of window
+  // and then enables fixed position
+  min-height: 100vh;
+  max-height: 100%;
+  min-width: 20em;
+  max-width: 100%;
+
+  transform: translate3d(0,0,0);
+
+  // Transforms and/or animations go here
+  // transform: scale(1) rotate(90deg);
+
+  transition: all 0.5s ease-out;
+
+
+  &--left {
+    left: -25em;
+    //top: $nav-fixed-height;
+
+    #{$show-offcanvas-nav} & {
+      opacity: 1;
+      left: -1px;
+    }
+
+    @media (max-width: $screen-max-sm) {
+      width: 100%;
+      left: -100%;
+
+      #{$show-offcanvas-nav} & {
+        opacity: 1;
+        left: 0;
+      }
+    }
+  }
+
+  &--right {
+    right: -25em;
+    //top: $nav-fixed-height;
+
+    #{$show-offcanvas-nav} & {
+      opacity: 1;
+      right: -1px;
+    }
+
+    @media (max-width: $screen-max-sm) {
+      width: 100%;
+      right: -100%;
+
+      #{$show-offcanvas-nav} & {
+        opacity: 1;
+        right: 0;
+      }
+    }
+  }
+
+}
+
+.nav-off-canvas-list {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  .nav-item {
+    position: relative;
+    z-index: z('navs', 'item');
+    display: block;
+    @include flex(1, 1, auto);
+
+    width: 100%;
+
+    padding: $nav-padding/3;
+    border: 0;
+
+    &--sub-menu {
+      overflow: hidden;
+    }
+  }
+}
+
+// Overides
+.nav-off-canvas {
+
+  .nav-item {
+    padding-left: $grid-gutter-width;
+    text-align: left;
+
+    &#{$show-nav-dropdown} {
+      padding-bottom: 0;
+    }
+  }
+
+  .nav-item-sub-wrap {
+    width: 100%;
+    text-align: left;
+
+    margin-left: -$grid-gutter-width;
+
+    position: static;
+    z-index: z('navs', 'dropdown');
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
+  }
+
+  .nav-item-sub {
+
+    position: relative;
+    overflow: hidden;
+    z-index: z('navs', 'dropdown');
+
+    margin-left: 0;
+    padding-left: ($grid-gutter-width)+($grid-gutter-width/2);
+
+    text-align: left;
+    width: 130%;
+
+    &:first-of-type {
+      box-shadow: inset 0px 3px 5px 0px rgba(0,0,0, 0.1);
+    }
+
+    &:last-of-type {
+      box-shadow: inset 0px -3px 5px 0px rgba(0,0,0, 0.1);
+    }
+
+    .nav-borders & {
+      border-right: 0;
+    }
+  }
+
+  .nav-icon-wrap {
+
+    &--right-lg {
+      right: 3rem;
+    }
+
+    &--left-lg {
+      left: 1rem;
+    }
+  }
+
+  .icon-nav-logo {
+    display: block;
+  }
+
+  .icon-toggle-menu {
+
+    @media (min-width: $screen-md) {
+      display: block;
+    }
+
+  }
+
+  .icon-nav-dropdown {
+
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    right: 0;
+
+    transform: translate3d(0,-50%,0) rotate(0deg);
+
+    width: 1.25em;
+    height: 1.25em;
+    cursor: pointer;
+
+    transition: transform 0.3s, opacity 0.5s;
+
+  }
+
+  #{$show-nav-dropdown} {
+
+    .icon-nav-dropdown {
+      top: 50%;
+      right: 0;
+
+      transform: translate3d(0,-50%,0) rotate(180deg);
+    }
+  }
+}
+
+.nav-full-screen-collapsed {
+
+  .nav-off-canvas-wrap {
+    position: relative;
+    width: 100%;
+
+    .nav-off-canvas-list {
+
+      position: absolute;
+
+      top: 40%;
+      left: 50%;
+
+      transform: translateY(-50%) translateX(-50%) translateZ(0);
+
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      height: auto;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .nav-item {
+      text-align: center;
+      display: inline-block;
+      padding: $nav-padding/2;
+      font-size: 1.4em;
+      
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    .nav-item-sub-wrap {
+      width: 100%;
+
+      margin-left: 0;
+
+      position: static;
+      z-index: z('navs', 'dropdown');
+      top: 0;
+      left: 0;
+      margin-bottom: 0;
+    }
+
+    .nav-item-sub {
+
+      width: 100%;
+      text-align: left;
+      display: inline-block;
+      padding: $nav-padding/2;
+      font-size: 1em;
+
+      &:first-of-type {
+        box-shadow: inset 0px 3px 5px 0px transparent;
+      }
+
+      &:last-of-type {
+        box-shadow: inset 0px -3px 5px 0px transparent;
+      }
+
+      .nav-borders & {
+        border-right: none;
+      }
+    }
+  }
+
+  .nav-off-canvas-wrap--left {
+    opacity: 0;
+    top: 0;
+    left: -100%;
+  }
+
+  .nav-off-canvas-wrap--right {
+    opacity: 0;
+    top: 0;
+    right: -100%;
+  }
+
+  &#{$show-offcanvas-nav} {
+
+    .nav-off-canvas-wrap--left {
+      opacity: 1;
+      left: 0;
+      top: 0;
+    }
+
+    .nav-off-canvas-wrap--right {
+      opacity: 1;
+      right: 0;
+      top: 0;
+    }
+  }
+
+}
+
+.nav-restrictor {
+  @include container-fixed;
+  position: relative;
+  height: $nav-fixed-height;
+
+  @media (min-width: $screen-md) {
+    width: $container-md;
+  }
+
+  @media (min-width: $screen-lg) {
+    width: $container-lg;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: $container-xl;
+  }
+}
+
+.nav-off-canvas {
+  .nav-off-canvas-shop-nav {
+
+    position: absolute;
+    right: 4rem;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    .nav-item {
+      display: inline-block;
+      text-align: center;
+      padding: $nav-padding/3;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

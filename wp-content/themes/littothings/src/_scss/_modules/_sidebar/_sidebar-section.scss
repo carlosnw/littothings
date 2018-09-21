@@ -1,0 +1,70 @@
+// Module - Sidebar section
+// --------------------------------------------------
+
+.sidebar-container {
+  height: 100%;
+  position: relative;
+}
+
+.sidebar {
+  @extend .u-section-dark;
+  border: 1px solid $border-colour-regular;
+  margin-top: $grid-gutter-width;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.sidebar-title {
+  @extend .u-box-padding-small;
+  @include type-scale-h3;
+  margin: 0;
+  border-bottom: 1px solid $border-colour-regular;
+}
+
+.sidebar-section {
+  @extend .u-box-padding-small;
+  font-size: 0.9em;
+  background: #fff;
+  border-bottom: 1px solid $border-colour-regular;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.sidebar-section-title {
+  @include type-scale-base;
+  font-weight: $weight-bold;
+  margin-bottom: $global-spacing/2;
+}
+.sidebar-section-body {
+  background: #fff;
+}
+
+.sidebar-section-item {
+  border-bottom: 1px solid $border-colour-regular;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.sidebar-item-image {
+  width: 25%;
+  float: left;
+  margin-right: 1em;
+}
+
+.sidebar-section-list {
+
+  @extend .u-box-padding-small;
+  margin-left: 1em;
+
+  // Naughty!
+  li {
+    margin-bottom: $global-spacing/2;
+
+  }
+}
