@@ -2,7 +2,7 @@
 /**
  * Admin class
  *
- * @author Yithemes
+ * @author YITH
  * @package YITH WooCommerce Quick View
  * @version 1.1.1
  */
@@ -125,10 +125,7 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 		 * @use plugin_action_links_{$plugin_file_name}
 		 */
 		public function action_links( $links ) {
-
-			$links[] = '<a href="' . admin_url( "admin.php?page={$this->_panel_page}" ) . '">' . __( 'Settings', 'yith-woocommerce-quick-view' ) . '</a>';
-			$links[] = '<a href="' . $this->get_premium_landing_uri() . '" target="_blank">' . __( 'Premium Version', 'yith-woocommerce-quick-view' ) . '</a>';
-
+			$links = yith_add_action_links( $links, $this->_panel_page, false );
 			return $links;
 		}
 
@@ -159,7 +156,7 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 				'menu_title'       => __( 'Quick View', 'yith-woocommerce-quick-view' ),
 				'capability'       => 'manage_options',
 				'parent'           => '',
-				'parent_page'      => 'yit_plugin_panel',
+				'parent_page'      => 'yith_plugin_panel',
 				'page'             => $this->_panel_page,
 				'admin-tabs'       => $admin_tabs,
 				'options-path'     => YITH_WCQV_DIR . '/plugin-options'

@@ -1,13 +1,14 @@
 // Font stack
 // --------------------------------------------------
 
-//@import url($font-family-body-import);
+@import url($font-family-body-import);
 //@import url($font-family-heading-import);
 
 // Body
 @mixin font-stack-body {
   font-family: $font-family-body, 'Helvetica', 'Arial', sans-serif;
   font-style: normal;
+  font-size: 16px;
 }
 
 // Heading
@@ -161,18 +162,18 @@
 
 // h1 Large
 @mixin type-scale-lg-h1 {
-  font-size: pem(32);
+  font-size: pem(26);
 
   @media only screen and (min-width: $screen-sm) {
-    font-size: pem(45);
+    font-size: pem(37);
   }
 
   @media only screen and (min-width: $screen-lg) {
-    font-size: pem(48);
+    font-size: pem(40);
   }
 
   @media only screen and (min-width: $screen-xl) {
-    font-size: pem(58);
+    font-size: pem(50);
   }
 
 }
@@ -307,7 +308,7 @@ body {
   @include font-stack-body;
 
   color: $text-colour-body;
-  font-weight: $weight-regular;
+  font-weight: $weight-thin;
   line-height: $line-height-body;
 }
 
@@ -319,7 +320,7 @@ em {
   font-style: italic;
 }
 
-// Reset margins and padding 
+// Reset margins and padding
 h1,
 h2,
 h3,
@@ -347,52 +348,52 @@ h5 {
   font-weight: $weight-medium;
 }
 
-// Apply scales
-h1 {
-  @include type-scale-h1;
-}
-
-h2 {
-  @include type-scale-h2;
-}
-
-h3 {
-  @include type-scale-h3;
-}
-
-h4 {
-  @include type-scale-h4;
-}
-
-h5 {
-  @include type-scale-h5;
-}
-
-// Body content
-// --------------------------------------------------
-p {
-  @include type-scale-base;
-
-  margin-bottom: 2em;
-  line-height: $line-height-body;
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-// Lists
-// --------------------------------------------------
-ul,
-ol {
-  
-  margin-bottom: 2em;
-  padding-left: 1em;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
+//// Apply scales
+//h1 {
+//  @include type-scale-h1;
+//}
+//
+//h2 {
+//  @include type-scale-h2;
+//}
+//
+//h3 {
+//  @include type-scale-h3;
+//}
+//
+//h4 {
+//  @include type-scale-h4;
+//}
+//
+//h5 {
+//  @include type-scale-h5;
+//}
+//
+//// Body content
+//// --------------------------------------------------
+//p {
+//  @include type-scale-base;
+//
+//  margin-bottom: 2em;
+//  line-height: $line-height-body;
+//
+//  &:last-child {
+//    margin-bottom: 0;
+//  }
+//}
+//
+//// Lists
+//// --------------------------------------------------
+//ul,
+//ol {
+//
+//  margin-bottom: 2em;
+//  padding-left: 1em;
+//
+//  &:last-child {
+//    margin-bottom: 0;
+//  }
+//}
 
 // Links
 // --------------------------------------------------
@@ -442,7 +443,7 @@ table {
 // Enhanced content styles
 // --------------------------------------------------
 @mixin enhanced-content-typography {
-  
+
   // Enhance unordered styles
   ul {
     @extend %enhanced-ul;

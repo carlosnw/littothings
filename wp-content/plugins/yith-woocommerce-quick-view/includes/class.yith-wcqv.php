@@ -2,7 +2,7 @@
 /**
  * Main class
  *
- * @author Yithemes
+ * @author YITH
  * @package YITH WooCommerce Quick View
  * @version 1.0.0
  */
