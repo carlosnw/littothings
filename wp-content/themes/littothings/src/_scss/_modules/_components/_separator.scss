@@ -1,0 +1,26 @@
+.fancy-title {
+  position: relative;
+  text-align: center;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 6px;
+    border-bottom: 3px solid #dcdcdc;
+    border-top: 1px solid #dcdcdc;
+    top: 50%;
+    margin-top: -3.5px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  span {
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+    background: #fff;
+    font-family: 'EB Garamond',serif;
+  }
+}
+

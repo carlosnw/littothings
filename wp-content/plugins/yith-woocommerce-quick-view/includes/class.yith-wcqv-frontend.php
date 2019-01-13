@@ -2,7 +2,7 @@
 /**
  * Frontend class
  *
- * @author Yithemes
+ * @author YITH
  * @package YITH WooCommerce Quick View
  * @version 1.1.1
  */
@@ -61,6 +61,11 @@ if( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 			// custom styles and javascripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles_scripts' ) );
 
+			// enqueue gift card script
+            if( defined('YITH_YWGC_FILE') ){
+                add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_gift_card_script' ) );
+            }
+
 			// quick view ajax
 		    add_action( 'wp_ajax_yith_load_product_quick_view', array( $this, 'yith_load_product_quick_view_ajax' ) );
 		    add_action( 'wp_ajax_nopriv_yith_load_product_quick_view', array( $this, 'yith_load_product_quick_view_ajax' ) );
@@ -107,6 +112,30 @@ if( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 			wp_add_inline_style( 'yith-quick-view', $inline_style );
 		}
 
+
+        /**
+         * Enqueue scripts for YITH WooCommerce Gift Cards
+         *
+         * @access public
+         * @return void
+         * @since 1.0.0
+         * @author Francesco Licandro <francesco.licandro@yithemes.com>
+         */
+        public function enqueue_gift_card_script(){
+            if( !wp_script_is('ywgc-frontend') ){
+                wp_register_script( "ywgc-frontend",
+                    YITH_YWGC_URL . 'assets/js/' . yit_load_js_file( 'ywgc-frontend.js' ),
+                    array(
+                        'jquery',
+                        'woocommerce',
+                    ),
+                    YITH_YWGC_VERSION,
+                    true );
+
+                wp_enqueue_script( "ywgc-frontend" );
+            }
+        }
+
 		/**
 		 * Add quick view button in wc product loop
 		 *
@@ -125,6 +154,10 @@ if( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
             if( ! $product_id ){
                 $product instanceof WC_Product && $product_id = yit_get_prop( $product, 'id', true );
             }
+
+            $show_quick_view_button = apply_filters( 'yith_wcqv_show_quick_view_button', true, $product_id );
+
+            if( !$show_quick_view_button ) return;
 
             $button = '';
             if( $product_id ) {

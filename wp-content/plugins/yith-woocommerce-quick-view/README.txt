@@ -2,8 +2,8 @@
 Contributors: yithemes
 Tags: woocommerce, quick view, woocommerce quick view, products quick view
 Requires at least: 4.0
-Tested up to: 4.9
-Stable tag: 1.3.2
+Tested up to: 5.0
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,28 @@ Full documentation is available [here](http://yithemes.com/docs-plugins/yith-woo
 3. The quick view modal.
 
 == Changelog ==
+
+= 1.3.6 = Released Dec 06 - 2018
+
+* New: Support to WooCommerce 3.5.2.
+* New: Support to WordPress 5.0.0.
+* Update: Plugin Core.
+
+= 1.3.5 = Released Oct 24 - 2018
+
+* New: Support to WooCommerce 3.5.0.
+* Update: Plugin Core.
+
+= 1.3.4 = Released Oct 05 - 2018
+
+* New: Support to WooCommerce 3.5.0 RC1.
+* New: Compatibility with YITH WooCommerce Gift Card.
+* Update: Plugin Core.
+
+= 1.3.3 = Released Sep 27 - 2018
+
+* Update: Plugin Core.
+* Dev: New filter "yith_wcqv_show_quick_view_button".
 
 = 1.3.2 = Released Sep 12 - 2018
 
@@ -176,9 +198,8 @@ Or, if you have created your own language pack, or have an update for an existin
 
 == Upgrade notice ==
 
-= 1.3.2 = Released Sep 12 - 2018
+= 1.3.6 = Released Dec 06 - 2018
 
-* New: Support to WooCommerce 3.4.5.
-* New: Support to WordPress 4.9.8.
+* New: Support to WooCommerce 3.5.2.
+* New: Support to WordPress 5.0.0.
 * Update: Plugin Core.
-* Fix: Now is possible use shortcode [yith_quick_view] without specify the "product_id" parameter.

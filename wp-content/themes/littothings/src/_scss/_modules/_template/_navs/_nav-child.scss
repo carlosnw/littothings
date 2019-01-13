@@ -1,0 +1,30 @@
+.primary-nav .menu-main-menu-container {
+  margin-top: 5px;
+}
+
+.primary-nav .menu > li > a{
+
+  &:before {
+    content: "";
+    border-right: 1px solid #dcdcdc;
+    margin-bottom: 7px;
+    position: absolute;
+    bottom: 4px;
+    width: 1px;
+    height: 15px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.primary-nav .menu > li {
+
+  &:last-of-type {
+    a {
+      &:before {
+        border-right: none;
+      }
+    }
+  }
+}

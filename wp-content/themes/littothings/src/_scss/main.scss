@@ -31,87 +31,89 @@
 // --------------------------------------------------
 
 // Normalize before base styles and framework
-@import '_base/_normalize';
-@import '_base/_base';
+//@import '_base/_normalize';
+//@import '_base/_base';
 @import '_base/_grid';
 @import '_base/_type';
-@import '_base/_animation';
+//@import '_base/_animation';
 
 // Layout
 // --------------------------------------------------
-@import '_layout/_footer';
-@import '_layout/_header';
-@import '_layout/_main';
-@import '_layout/_wrapper';
-@import '_layout/_restrictor';
-@import '_layout/_centered-layout';
+//@import '_layout/_footer';
+//@import '_layout/_header';
+//@import '_layout/_main';
+//@import '_layout/_wrapper';
+//@import '_layout/_restrictor';
+//@import '_layout/_centered-layout';
 
 // Modules
 // --------------------------------------------------
 
 // Components
 // Components before main modules, this allows custom module classes to overwride component defaults
-@import '_modules/_components/_checkbox-radio';
-@import '_modules/_components/_btn';
-@import '_modules/_components/_select';
-@import '_modules/_components/_input';
-@import '_modules/_components/_faux-table';
-@import '_modules/_components/_captioned-image';
-@import '_modules/_components/_pagination';
-@import '_modules/_components/_comments';
-@import '_modules/_components/_progress-bar';
-@import '_modules/_components/_checkbox-radio';
-@import '_modules/_components/_panel';
+//@import '_modules/_components/_checkbox-radio';
+//@import '_modules/_components/_btn';
+//@import '_modules/_components/_select';
+@import '_modules/_components/_separator';
+//@import '_modules/_components/_input';
+//@import '_modules/_components/_faux-table';
+//@import '_modules/_components/_captioned-image';
+//@import '_modules/_components/_pagination';
+//@import '_modules/_components/_comments';
+//@import '_modules/_components/_progress-bar';
+//@import '_modules/_components/_checkbox-radio';
+//@import '_modules/_components/_panel';
 @import '_modules/_components/_tabs';
-@import '_modules/_components/_map';
-@import '_modules/_components/_parrallax-section';
-@import '_modules/_components/_iframes';
+//@import '_modules/_components/_map';
+//@import '_modules/_components/_parrallax-section';
+//@import '_modules/_components/_iframes';
 @import '_modules/_components/_cta';
-@import '_modules/_components/_breadcrumbs';
+//@import '_modules/_components/_breadcrumbs';
 
 // Blog
-@import '_modules/_blog/_blog-tile';
-@import '_modules/_blog/_blog-calendar';
+//@import '_modules/_blog/_blog-tile';
+//@import '_modules/_blog/_blog-calendar';
 
 // Products
-@import '_modules/_products/_product-item';
-@import '_modules/_products/_product-gallery';
-@import '_modules/_products/_product-attribute';
-@import '_modules/_products/_product-page-description';
+//@import '_modules/_products/_product-item';
+//@import '_modules/_products/_product-gallery';
+//@import '_modules/_products/_product-attribute';
+//@import '_modules/_products/_product-page-description';
 
 // Forms
 @import '_modules/_forms/_forms';
-@import '_modules/_forms/_search';
+//@import '_modules/_forms/_search';
 
 // Sidebar
-@import '_modules/_sidebar/_sidebar-product';
-@import '_modules/_sidebar/_sidebar-section';
+//@import '_modules/_sidebar/_sidebar-product';
+//@import '_modules/_sidebar/_sidebar-section';
 
 // Slider
-@import '_modules/_slider/_slider-core';
+//@import '_modules/_slider/_slider-core';
 @import '_modules/_slider/_slider';
 
 // Lightbox
-@import '_modules/_swipe-box/_swipe-box';
+//@import '_modules/_swipe-box/_swipe-box';
 
 // Timeline
-@import '_modules/_timeline/_timeline-core';
-@import '_modules/_timeline/_timeline';
+//@import '_modules/_timeline/_timeline-core';
+//@import '_modules/_timeline/_timeline';
 
 // Template
-@import '_modules/_template/_header';
-@import '_modules/_template/_hero';
-@import '_modules/_template/_subscribe';
+//@import '_modules/_template/_header';
+//@import '_modules/_template/_hero';
+//@import '_modules/_template/_subscribe';
 @import '_modules/_template/_footer-content';
-@import '_modules/_template/_warnings';
+//@import '_modules/_template/_warnings';
 
 // Navs
-@import '_modules/_template/_nav';
-@import '_modules/_template/_nav-offcanvas';
-@import '_modules/_template/_navs/_nav-light';
-@import '_modules/_template/_navs/_nav-dark';
-@import '_modules/_template/_navs/_nav-trans';
-@import '_modules/_template/_navs/_nav-custom';
+//@import '_modules/_template/_nav';
+//@import '_modules/_template/_nav-offcanvas';
+//@import '_modules/_template/_navs/_nav-light';
+//@import '_modules/_template/_navs/_nav-dark';
+//@import '_modules/_template/_navs/_nav-trans';
+//@import '_modules/_template/_navs/_nav-custom';
+@import '_modules/_template/_navs/_nav-child';
 
 // Woocommerce
 @import '_woocommerce/_woocommerce';
@@ -123,5 +125,5 @@
 // --------------------------------------------------
 @import '_utility/_content-layout';
 
-// Overriding theme
-@import '_theme/theme';
+//// Overriding theme
+//@import '_theme/theme';

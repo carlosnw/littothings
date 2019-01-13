@@ -581,38 +581,7 @@ jQuery(document).ready(function($) {
 });
 /*13. Magnific Pop-up for Image size (end)*/
 
-/* 14. Sticky Menu (start)*/
-jQuery(document).ready(function($) {
 
-    "use strict";
-    var $menu = $("nav.primary-nav");
-    var $hd_h = $("header.site-header").height();
-    var $hd_w = $("header.site-header").width();
-    var $menu_h = $("nav.primary-nav").height();
-    var $menu_sticky_h = $(".main-menu").css({'height': $menu_h});
-
-if($hd_w > 800){
-    $(window).scroll(function(){
-        if ( $(this).scrollTop() > $hd_h && $menu.hasClass("default") ){
-            $menu.fadeOut('fast',function(){
-                $(this).removeClass("default")
-                       .addClass("sticky-menu")
-                       .fadeIn(500);
-            });
-        }
-
-		else if($(this).scrollTop() <= $hd_h && $menu.hasClass("sticky-menu")) {
-            $menu.fadeOut('fast',function(){
-                $(this).removeClass("sticky-menu")
-                        .addClass("default")
-                        .fadeIn(300);
-            });
-        }
-    });//scroll
-}
-
-});
-/* 14. Sticky Menu  (end)*/
 
 jQuery(document).ready(function($) {
     "use strict";
@@ -629,6 +598,12 @@ jQuery(document).ready(function($){
     $("#toTop").click(function(){
     $("html, body").animate({scrollTop : 0},1500);
    });
+})
+
+jQuery(document).ready(function($){
+    $("#toSubscribe").click(function(){
+        $("html, body").animate({scrollTop: $('#mailpoet_form-4').offset().top}, 1000);
+    });
 })
 
 jQuery(document).ready(function($){

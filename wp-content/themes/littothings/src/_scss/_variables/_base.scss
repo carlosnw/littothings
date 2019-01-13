@@ -76,18 +76,12 @@ $ease-elastic: cubic-bezier(0.425, -0.195, 0.005, 1.215);
 // Typography
 // --------------------------------------------------
 
-$font-family-heading: '-apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;';
-$font-family-body: '-apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;';
+$font-family-heading: 'EB Garamond';
+$font-family-body: 'Lato';
 
 // Use :400,400i,700 syntax
 $font-family-heading-extra-weights: '';
-$font-family-body-extra-weights: '';
+$font-family-body-extra-weights: ':300, 400, 500, 600, 700';
 
 //Import google fonts
 $font-family-heading-import: 'https://fonts.googleapis.com/css?family=#{$font-family-heading}#{$font-family-heading-extra-weights}';
