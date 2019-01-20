@@ -19,17 +19,27 @@ function enqueue_custom_css() {
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_css' );
 
 function my_custom_script_load(){
-    wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/assets/js/modules/custom-scripts.js', array ( 'jquery' ));
+    wp_enqueue_script( 'scroll-to', get_stylesheet_directory_uri() . '/assets/js/modules/scroll-to-subscribe.js', array ( 'jquery' ));
 }
 
 add_action( 'wp_enqueue_scripts', 'my_custom_script_load' );
 
 ?>
 
-<?php
 
+
+<?php
+//Extra image sizes
 add_theme_support( 'post-thumbnails' );
 
+//Blog Thumbnails
 add_image_size( 'blog-thumb', 720, 360, true );
+
+//Full Width Images
+add_image_size( 'full-landscape', 2000, 850, array( 'center', 'top' ) );
+
+//Tile Images
+add_image_size( 'tile-portrait', 720, 950, false );
+add_image_size( 'tile-landscape', 2280, 350, false );
 
 ?>

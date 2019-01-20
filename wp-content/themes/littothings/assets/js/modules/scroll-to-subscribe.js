@@ -1,3 +1,5 @@
+//Scroll down to subscribe
+
 jQuery(document).ready(function($){
     $(".scroll-to-subscribe").click(function(){
         $("html, body").animate({

@@ -2,6 +2,10 @@
 // Build out the grid using the utility mixins
 // --------------------------------------------------
 
+html, body {
+  overflow-x: hidden;
+}
+
 // Container widths
 // Set the container width, and override it for fixed navbars in media queries.
 // --------------------------------------------------
@@ -492,6 +496,24 @@ _:-ms-fullscreen, :root .l-cell-flex {
   @include loop-grid--order-helpers($grid-columns, '-xl');
 }
 
+// Extra Layout
+// --------------------------------------------------
+.l-breakout-wrap {
+  position: relative; /* for child pseudo-element */
+  z-index: 0;
+  margin: 0 -600rem;
+  /* add back negative margin value */
+  padding: 0.25rem 600rem;
 
-
-
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1; /* behind parent */
+    top: 0;
+    bottom: 0;
+    /* subtract h2 padding (1.5rem) */
+    left: 598.5rem;
+    right: 598.5rem;
+    padding-top: 500px;
+  }
+}

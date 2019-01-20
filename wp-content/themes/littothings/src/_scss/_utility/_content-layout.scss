@@ -647,6 +647,17 @@
   color: #ffffff;
 }
 
+.u-text-muted {
+  color: $text-colour-muted;
+}
+
+// Theme Specific
+.u-promo-text {
+  @include font-stack-tertiary-text;
+  font-size: 1.25em;
+  color: #4c4c4c;
+}
+
 // Colour variations
 .u-icon-danger {
   fill: $danger-colour;
@@ -762,6 +773,14 @@
 
 .u-block-divider {
   @include block-divider(1.25);
+}
+
+.u-fancy-title {
+  @include font-stack-heading;
+  font-size: 1.75em;
+  text-transform: uppercase;
+
+
 }
 
 // Cursors
