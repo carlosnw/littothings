@@ -66,13 +66,6 @@ $payment_details_content = get_field('payment_details_content');
                             </div>
                         </div>
                     </div>
-                    <!--                        <h3>Envelope Addressing</h3>-->
-                    <!--                        <p>£2 to £4 per envelope</p>-->
-                    <!--                        <p>or higher for special requests</p>-->
-                    <!---->
-                    <!--                        <h3>Envelope Addressing</h3>-->
-                    <!--                        <p>£2 to £4 per envelope</p>-->
-                    <!--                        <p>or higher for special requests</p>-->
 
                     <input type="radio" id="tab2" name="tab">
                     <label class="tabButton" for="tab2">The Collection</label>
@@ -156,17 +149,16 @@ $payment_details_content = get_field('payment_details_content');
             </div>
         </div>
 
-    </div>
-
-    <form class="form-section-wrap">
-        <div class="l-contrainer">
-            <div class="l-row">
-                <div class="l-col-md-8 l-col-md-offset-2">
-                    <?php echo do_shortcode( '[contact-form-7 id="4700" title="Calligraphy & Design"]' ); ?>
-                </div>
+        <div class="l-row l-breakout-wrap u-box-padding--tall">
+            <div class="l-col-md-8 l-col-md-offset-2">
+                <form class="form-section-wrap">
+                    <?php echo do_shortcode('[contact-form-7 id="4700" title="Calligraphy & Design"]'); ?>
+                </form>
             </div>
         </div>
-    </form>
+
+    </div>
+
 </main><!-- #content -->
 
 <?php get_sidebar(); ?>

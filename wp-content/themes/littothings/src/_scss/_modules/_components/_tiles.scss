@@ -1,0 +1,25 @@
+figure {
+  &.tiles-bg {
+    background-color: $bg-colour-light-mid;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    &--portrait {
+      height:474px;
+    }
+
+    &--landscape {
+      height:173px;
+    }
+  }
+}
+
+.tile-bg-overlay {
+  background-color: rgba(80,80,80,0.3);
+  height: 100%;
+}

@@ -2,7 +2,7 @@
 // --------------------------------------------------
 
 @import url($font-family-body-import);
-//@import url($font-family-heading-import);
+@import url($font-family-heading-import);
 
 // Body
 @mixin font-stack-body {
